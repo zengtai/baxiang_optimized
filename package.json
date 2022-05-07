@@ -13,6 +13,8 @@
     "gatsby-plugin-react-helmet": "^5.13.0",
     "gatsby-plugin-sharp": "^4.13.0",
     "gatsby-source-filesystem": "^4.13.0",
+    "gatsby-source-strapi": "^2.0.0",
+    "gatsby-transformer-remark": "^5.13.0",
     "gatsby-transformer-sharp": "^4.13.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
@@ -20,7 +22,12 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "autoprefixer": "^10.4.7",
+    "gatsby-plugin-postcss": "^5.13.0",
+    "postcss": "^8.4.13",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.10",
+    "tailwindcss": "^3.0.24"
   },
   "keywords": [
     "gatsby"
