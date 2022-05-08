@@ -3,7 +3,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import Adsense from "../components/Adsense"
+import Banner from "../components/Banner"
 
 const NotFoundPage = () => (
   <Layout>
@@ -15,7 +15,7 @@ const NotFoundPage = () => (
       </div>
     </div>
     <div className="h-[300px] w-full">
-      <Adsense
+      <Banner
         slot={`1977361307`}
         client={`ca-pub-9209477879340784`}
         format="auto"

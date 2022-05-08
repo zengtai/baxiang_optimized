@@ -5,7 +5,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import List from "../components/list"
-import Adsense from "../components/Adsense"
+import Banner from "../components/Banner"
 
 const Home = ({ pageContext: data }) => {
   console.log(data.categories)
@@ -16,7 +16,7 @@ const Home = ({ pageContext: data }) => {
 
       <div className="container mx-auto">
         <div className="mb-3 h-[100px] w-full bg-black/10">
-          <Adsense
+          <Banner
             slot={`1977361307`}
             client={`ca-pub-9209477879340784`}
             format="auto"

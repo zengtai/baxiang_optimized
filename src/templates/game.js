@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Detail from "../components/detail"
 import List from "../components/list"
-import Adsense from "../components/Adsense"
+import Banner from "../components/Banner"
 import { graphql } from "gatsby"
 
 export default function GameTemplate({ data }) {
@@ -15,7 +15,7 @@ export default function GameTemplate({ data }) {
       <Seo title={`game.title`} />
       <div className="container mx-auto">
         <div className="mb-3 h-[100px] w-full bg-black/10">
-          <Adsense
+          <Banner
             slot={`1977361307`}
             client={`ca-pub-9209477879340784`}
             format="auto"
