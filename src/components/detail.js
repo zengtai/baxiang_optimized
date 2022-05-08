@@ -11,11 +11,13 @@ export default function Detail({ game }) {
         <span>&gt;</span>
         <span className="opacity-50">{game.title}</span>
       </div>
-      <div className="mx-3 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-sky-700 shadow-lg shadow-black/10 md:flex-row md:flex-row md:items-start">
+      <div className="mx-3 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-sky-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
         <div className="block h-32 w-32 shrink-0">
           <img
             src={game.icon_url}
             alt={game.title}
+            width={96}
+            height={96}
             className="h-32 w-32 rounded-xl object-fill"
           />
         </div>

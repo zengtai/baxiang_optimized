@@ -1,8 +1,12 @@
 import * as React from "react"
-export default function Adsense({ ADS_ID }) {
-  return (
-    <>
-      <div>{ADS_ID}</div>
-    </>
-  )
-}
+
+export default ({ client, slot, format = "auto" }) => (
+  <div>
+    <ins
+      className="adsbygoogle"
+      data-ad-client={client}
+      data-ad-slot={slot}
+      data-ad-format={format}
+    ></ins>
+  </div>
+)
