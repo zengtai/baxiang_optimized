@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Detail from "../components/detail"
 import List from "../components/list"
-import Banner from "../components/Banner"
+
 import { graphql } from "gatsby"
 
 export default function GameTemplate({ data }) {
@@ -14,13 +14,8 @@ export default function GameTemplate({ data }) {
     <Layout>
       <Seo title={`game.title`} />
       <div className="container mx-auto">
-        <div className="mb-3 h-[100px] w-full bg-black/10">
-          <Banner
-            slot={`1977361307`}
-            client={`ca-pub-9209477879340784`}
-            format="auto"
-          />
-        </div>
+        <div className="h-[100px] w-[360px] bg-black/10"></div>
+
         <Detail game={game} />
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
           You May Also Like

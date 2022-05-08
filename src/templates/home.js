@@ -5,7 +5,6 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import List from "../components/list"
-import Banner from "../components/Banner"
 
 const Home = ({ pageContext: data }) => {
   console.log(data.categories)
@@ -15,13 +14,7 @@ const Home = ({ pageContext: data }) => {
       <Seo title="Home" />
 
       <div className="container mx-auto">
-        <div className="mb-3 h-[100px] w-full bg-black/10">
-          <Banner
-            slot={`1977361307`}
-            client={`ca-pub-9209477879340784`}
-            format="auto"
-          />
-        </div>
+        <div className="h-[100px] w-[360px] bg-black/10"></div>
         <h2 className="px-4 text-lg font-bold">All Games</h2>
         <List items={data.dataHome} type="grid" />
       </div>
