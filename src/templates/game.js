@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Detail from "../components/detail"
 import List from "../components/list"
+import Banner from "../components/banner"
 
 import { graphql } from "gatsby"
 
@@ -12,6 +13,15 @@ export default function GameTemplate({ data }) {
   return (
     <Layout>
       <Seo title={`game.title`} />
+      <div className="mb-3 h-[100px] w-[360px] bg-black/10">
+        <Banner
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          slot="1977361307"
+          format=""
+          responsive="true"
+        />
+      </div>
       <div className="container mx-auto">
         <Detail game={game} />
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
