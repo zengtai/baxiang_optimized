@@ -7,15 +7,12 @@ import List from "../components/list"
 import { graphql } from "gatsby"
 
 export default function GameTemplate({ data }) {
-  console.log(data.strapiGame)
   const game = data.strapiGame
   const relatedGames = data.allStrapiGame.nodes
   return (
     <Layout>
       <Seo title={`game.title`} />
       <div className="container mx-auto">
-        <div className="h-[100px] w-[360px] bg-black/10"></div>
-
         <Detail game={game} />
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
           You May Also Like

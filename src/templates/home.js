@@ -14,7 +14,6 @@ const Home = ({ pageContext: data }) => {
       <Seo title="Home" />
 
       <div className="container mx-auto">
-        <div className="h-[100px] w-[360px] bg-black/10"></div>
         <h2 className="px-4 text-lg font-bold">All Games</h2>
         <List items={data.dataHome} type="grid" />
       </div>
