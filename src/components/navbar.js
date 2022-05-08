@@ -4,7 +4,7 @@ import getIcon from "../components/icons"
 // import iconList from "../components/icons"
 
 export default function Navbar({ siteTitle, items }) {
-  const [isOpen, setOpen] = React.useState(true)
+  const [isOpen, setOpen] = React.useState(false)
 
   const isActive = ({ isCurrent }) => {
     return isCurrent
@@ -149,17 +149,17 @@ export default function Navbar({ siteTitle, items }) {
         >
           <span
             className={`absolute top-1/2 left-1/2 block h-[2px] w-6 -translate-y-1/2 -translate-x-1/2 transform bg-lime-500 duration-300 ${
-              isOpen ? `-translate-y-[8px] rotate-0` : `-rotate-45`
+              isOpen ? `-rotate-45` : `-translate-y-[8px] rotate-0`
             }`}
           ></span>
           <span
             className={`absolute top-1/2 left-1/2 block h-[2px] w-6 -translate-x-1/2 transform bg-lime-500 duration-300 ${
-              isOpen ? `translate-y-[6px] rotate-0` : `rotate-45`
+              isOpen ? `rotate-45` : `translate-y-[6px] rotate-0`
             }`}
           ></span>
           <span
             className={`absolute top-1/2 left-1/2 h-[2px] w-6 -translate-y-1/2 -translate-x-1/2 bg-lime-500 ${
-              isOpen ? `rotate-0 opacity-100` : `rotate-45 opacity-0`
+              isOpen ? `rotate-45 opacity-0` : `rotate-0 opacity-100`
             }`}
           ></span>
         </button>

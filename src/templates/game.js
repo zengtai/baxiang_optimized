@@ -43,6 +43,7 @@ export const query = graphql`
       description
       gid
       icon_url
+      game_url
       title
       category {
         name
