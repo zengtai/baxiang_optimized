@@ -4,9 +4,12 @@ import Seo from "../components/seo"
 import List from "../components/list"
 
 export default function CategoryTemplate({
-  pageContext: { category, allGames, categories },
+  pageContext: { category, games, categories },
 }) {
-  const games = allGames.filter(game => game.category.name === category.name)
+  console.log(category)
+  console.log(categories)
+  console.log(games)
+  const allGames = games.filter(game => game.category.name === category.name)
 
   return (
     <Layout navItems={categories}>
@@ -16,7 +19,7 @@ export default function CategoryTemplate({
           All {category.name} {games.length > 1 ? `Games` : `Game`} (
           {games.length})
         </h2>
-        <List items={games} type="grid" />
+        <List items={allGames} type="grid" />
       </div>
     </Layout>
   )

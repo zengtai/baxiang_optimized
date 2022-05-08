@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function Detail({ game }) {
   return (
     <>
-      <div className="flex flex-row space-x-2 px-6 pb-3">
+      <div className="flex origin-left scale-95 flex-row space-x-2 px-6 pb-3">
         <Link to={`/`}>Home</Link>
         <span>&gt;</span>
         <Link to={`/category/${game.category.slug}`}>{game.category.name}</Link>

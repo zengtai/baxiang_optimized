@@ -15,7 +15,7 @@ const Home = ({ pageContext: data }) => {
 
       <div className="container mx-auto">
         <h2 className="px-4 text-lg font-bold">All Games</h2>
-        <List items={data.allGames} type="grid" />
+        <List items={data.dataHome} type="grid" />
       </div>
     </Layout>
   )
