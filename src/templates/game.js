@@ -1,23 +1,130 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link } from "gatsby"
+import Detail from "../components/detail"
+import List from "../components/list"
+// import { useStaticQuery, graphql } from "gatsby"
 
-export default function Game({ pageContext: { game } }) {
+export default function GameTemplate({ pageContext: data }) {
+  const game = data.game
+  const gid = data.gid
+  const currentRelated = data.allGames.filter(e => e.gid !== gid)
+  const relatedGames = currentRelated.slice(0, 12)
+  // console.log(data.categories)
+  const categories = data.categories
   return (
-    <Layout>
+    <Layout navItems={categories}>
       <Seo title={game.title} />
-      <div>
-        <img src={game.icon_url} alt={game.title} />
+      <div className="container mx-auto">
+        <Detail game={game} />
+        <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
+          You May Also Like
+        </h2>
+        <List items={relatedGames} type="grid" />
       </div>
-      <h1>{game.title}</h1>
-      <div>
-        <Link to={`/category/${game.category.slug}`}>{game.category.name}</Link>
-      </div>
-      <div>{game.description}</div>
-      <button>
-        <a href={game.game_url}>Play now</a>
-      </button>
+
+      {/* <List items={relatedGames.allStrapiGame.nodes} type="grid" /> */}
     </Layout>
   )
 }
+
+// export const query = graphql(`
+//   query ($gid: Int) {
+//     allStrapiGame(
+//       sort: { fields: creation_date, order: DESC }
+//       filter: {
+//         appid: {
+//           in: [
+//             "Knife"
+//             "JumpSmash"
+//             "CrazyMoto"
+//             "CrazyKart3D"
+//             "FireTheGun"
+//             "FeverRacing"
+//             "ColorBall3D"
+//             "CrazyKnife"
+//             "BoardTheTrain"
+//             "MrRacer"
+//             "BigSword"
+//             "HiTaxi"
+//             "TrafficRun"
+//             "MrBullet"
+//             "LetMeIn"
+//             "SnakeGo"
+//             "DessertConnect"
+//             "SwiftRider"
+//             "CrackShot"
+//             "CrazyGunfight"
+//             "GoldenGlove"
+//             "ColorRing"
+//             "PianoKeys"
+//             "ArchersKing"
+//             "MyBabyCare"
+//             "DartsKing3D"
+//             "CrazyRace"
+//             "BallIsComing"
+//             "HungyBunny"
+//             "TheSameWorld"
+//             "SuperMiner"
+//             "BounceShooter"
+//             "HillRacing"
+//             "BatterKing"
+//             "BlockGun3D"
+//             "ZombieSurvival"
+//             "FruitMonster"
+//             "FierceCity"
+//             "IronAttack"
+//             "AceMan"
+//             "AirBrawl"
+//             "BumbleShooter"
+//             "AmazingRoad"
+//             "RainbowSplash"
+//             "MagicParkour"
+//             "CrazyDrift"
+//             "FisherMan"
+//             "FruitsFall"
+//             "RocketJump"
+//             "MagicPaint"
+//             "GlidingCharger"
+//             "RoadCharger"
+//             "ArcheryMaster"
+//             "UltraDrift"
+//             "SharkisComing"
+//             "PuppyRun"
+//             "PenguinDash"
+//             "MonsterCrash"
+//             "DeathJump"
+//             "HungryMonster"
+//             "HungryAnimals"
+//             "JumpingMonkey"
+//             "MergeKill"
+//             "CrazyTrain3D"
+//             "CrazyHammer"
+//             "VirusWar"
+//             "TrappedPirate"
+//             "StickmanVsZombies"
+//             "FingerCannon"
+//             "BulletMan"
+//             "KnockBalls"
+//             "GunShooter"
+//             "MergeGuns3D"
+//             "BulletMaster3D"
+//             "CrashTower3D"
+//             "TowerBlast3D"
+//             "ShootSmash"
+//             "ShootingCubes"
+//           ]
+//         }
+//         gid: { ne: $gid }
+//       }
+//       limit: 12
+//     ) {
+//       nodes {
+//         icon_url
+//         title
+//         slug
+//         gid
+//       }
+//     }
+//   }
+// `)

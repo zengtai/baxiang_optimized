@@ -1,25 +1,24 @@
 import * as React from "react"
+// import { Link, useStaticQuery, graphql } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link } from "gatsby"
+import List from "../components/list"
 
-export default function home({ pageContext: games }) {
+const Home = ({ pageContext: data }) => {
+  console.log(data.categories)
+  const categories = data.categories
   return (
-    <Layout>
-      <Seo title={``} />
-      <h2>All Games</h2>
-      <ul className="grid grid-cols-2 gap-4 md:grid-cols-8">
-        {games.map(game => {
-          return (
-            <li key={game.gid}>
-              <Link to={`/game/${game.slug}`} title={game.title}>
-                <img src={game.icon_url} alt={game.title} />
-                {game.title}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+    <Layout navItems={categories}>
+      <Seo title="Home" />
+
+      <div className="container mx-auto">
+        <h2 className="px-4 text-lg font-bold">All Games</h2>
+        <List items={data.allGames} type="grid" />
+      </div>
     </Layout>
   )
 }
+
+export default Home

@@ -6,11 +6,26 @@ module.exports = {
   siteMetadata: {
     title: `SuperEasyGame`,
     description: `Play Free Games Online`,
-    author: `@UpTap`,
+    author: `@SuperEasyGame`,
     siteUrl: `https://www.supereasygame.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: ["UA-183890722-16"],
+      },
+      pluginConfig: {
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -23,7 +38,6 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: process.env.STRAPI_API_URL,
-        // apiURL: `https://lab.uptapgame.com`,
         // accessToken: process.env.STRAPI_TOKEN,
         collectionTypes: [`game`, `category`],
       },
@@ -45,6 +59,15 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

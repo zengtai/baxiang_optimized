@@ -1,26 +1,23 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link } from "gatsby"
+import List from "../components/list"
 
-export default function Category({ pageContext: { category } }) {
-  console.log(category)
+export default function CategoryTemplate({
+  pageContext: { category, allGames, categories },
+}) {
+  const games = allGames.filter(game => game.category.name === category.name)
+
   return (
-    <Layout>
+    <Layout navItems={categories}>
       <Seo title={category.name} />
-      <h2>All {category.name} Games</h2>
-      <ul className="grid grid-cols-2 gap-4 md:grid-cols-8">
-        {category.games.map(game => {
-          return (
-            <li key={game.gid}>
-              <Link to={`/game/${game.slug}`} title={game.title}>
-                <img src={game.icon_url} alt={game.title} />
-                {game.title}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      <div className="container mx-auto">
+        <h2 className="px-4 text-lg font-bold">
+          All {category.name} {games.length > 1 ? `Games` : `Game`} (
+          {games.length})
+        </h2>
+        <List items={games} type="grid" />
+      </div>
     </Layout>
   )
 }

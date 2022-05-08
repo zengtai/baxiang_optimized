@@ -3,37 +3,205 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const categories = await graphql(`
-    {
-      allStrapiCategory {
+  const allCategories = await graphql(`
+    query SiteNavQuery {
+      allStrapiCategory(
+        filter: {
+          games: {
+            elemMatch: {
+              appid: {
+                in: [
+                  "Knife"
+                  "JumpSmash"
+                  "CrazyMoto"
+                  "CrazyKart3D"
+                  "FireTheGun"
+                  "FeverRacing"
+                  "ColorBall3D"
+                  "CrazyKnife"
+                  "BoardTheTrain"
+                  "MrRacer"
+                  "BigSword"
+                  "HiTaxi"
+                  "TrafficRun"
+                  "MrBullet"
+                  "LetMeIn"
+                  "SnakeGo"
+                  "DessertConnect"
+                  "SwiftRider"
+                  "CrackShot"
+                  "CrazyGunfight"
+                  "GoldenGlove"
+                  "ColorRing"
+                  "PianoKeys"
+                  "ArchersKing"
+                  "MyBabyCare"
+                  "DartsKing3D"
+                  "CrazyRace"
+                  "BallIsComing"
+                  "HungyBunny"
+                  "TheSameWorld"
+                  "SuperMiner"
+                  "BounceShooter"
+                  "HillRacing"
+                  "BatterKing"
+                  "BlockGun3D"
+                  "ZombieSurvival"
+                  "FruitMonster"
+                  "FierceCity"
+                  "IronAttack"
+                  "AceMan"
+                  "AirBrawl"
+                  "BumbleShooter"
+                  "AmazingRoad"
+                  "RainbowSplash"
+                  "MagicParkour"
+                  "CrazyDrift"
+                  "FisherMan"
+                  "FruitsFall"
+                  "RocketJump"
+                  "MagicPaint"
+                  "GlidingCharger"
+                  "RoadCharger"
+                  "ArcheryMaster"
+                  "UltraDrift"
+                  "SharkisComing"
+                  "PuppyRun"
+                  "PenguinDash"
+                  "MonsterCrash"
+                  "DeathJump"
+                  "HungryMonster"
+                  "HungryAnimals"
+                  "JumpingMonkey"
+                  "MergeKill"
+                  "CrazyTrain3D"
+                  "CrazyHammer"
+                  "VirusWar"
+                  "TrappedPirate"
+                  "StickmanVsZombies"
+                  "FingerCannon"
+                  "BulletMan"
+                  "KnockBalls"
+                  "GunShooter"
+                  "MergeGuns3D"
+                  "BulletMaster3D"
+                  "CrashTower3D"
+                  "TowerBlast3D"
+                  "ShootSmash"
+                  "ShootingCubes"
+                ]
+              }
+            }
+          }
+        }
+      ) {
         nodes {
           name
           slug
-          games {
-            gid
-            slug
-            title
-            icon_url
-          }
         }
       }
     }
   `)
 
   const games = await graphql(`
-    {
-      allStrapiGame {
-        edges {
-          node {
+    query SiteNavQuery {
+      allStrapiGame(
+        sort: { fields: creation_date, order: DESC }
+        filter: {
+          appid: {
+            in: [
+              "Knife"
+              "JumpSmash"
+              "CrazyMoto"
+              "CrazyKart3D"
+              "FireTheGun"
+              "FeverRacing"
+              "ColorBall3D"
+              "CrazyKnife"
+              "BoardTheTrain"
+              "MrRacer"
+              "BigSword"
+              "HiTaxi"
+              "TrafficRun"
+              "MrBullet"
+              "LetMeIn"
+              "SnakeGo"
+              "DessertConnect"
+              "SwiftRider"
+              "CrackShot"
+              "CrazyGunfight"
+              "GoldenGlove"
+              "ColorRing"
+              "PianoKeys"
+              "ArchersKing"
+              "MyBabyCare"
+              "DartsKing3D"
+              "CrazyRace"
+              "BallIsComing"
+              "HungyBunny"
+              "TheSameWorld"
+              "SuperMiner"
+              "BounceShooter"
+              "HillRacing"
+              "BatterKing"
+              "BlockGun3D"
+              "ZombieSurvival"
+              "FruitMonster"
+              "FierceCity"
+              "IronAttack"
+              "AceMan"
+              "AirBrawl"
+              "BumbleShooter"
+              "AmazingRoad"
+              "RainbowSplash"
+              "MagicParkour"
+              "CrazyDrift"
+              "FisherMan"
+              "FruitsFall"
+              "RocketJump"
+              "MagicPaint"
+              "GlidingCharger"
+              "RoadCharger"
+              "ArcheryMaster"
+              "UltraDrift"
+              "SharkisComing"
+              "PuppyRun"
+              "PenguinDash"
+              "MonsterCrash"
+              "DeathJump"
+              "HungryMonster"
+              "HungryAnimals"
+              "JumpingMonkey"
+              "MergeKill"
+              "CrazyTrain3D"
+              "CrazyHammer"
+              "VirusWar"
+              "TrappedPirate"
+              "StickmanVsZombies"
+              "FingerCannon"
+              "BulletMan"
+              "KnockBalls"
+              "GunShooter"
+              "MergeGuns3D"
+              "BulletMaster3D"
+              "CrashTower3D"
+              "TowerBlast3D"
+              "ShootSmash"
+              "ShootingCubes"
+            ]
+          }
+        }
+      ) {
+        nodes {
+          game_url
+          icon_url
+          title
+          description
+          slug
+          gid
+          category {
             slug
-            title
-            game_url
-            icon_url
-            description
-            category {
-              name
-              slug
-            }
+            name
           }
         }
       }
@@ -44,30 +212,42 @@ exports.createPages = async ({ graphql, actions }) => {
   const gameTemplatePath = path.resolve(`./src/templates/game.js`)
   const categoryTemplatePath = path.resolve(`./src/templates/category.js`)
 
+  const allGames = games.data.allStrapiGame.nodes
+  const categories = allCategories.data.allStrapiCategory.nodes
+
+  // Home page
   createPage({
     path: `/`,
     component: homeTemplatePath,
     context: {
-      games: games.data.allStrapiGame.edges,
+      allGames,
+      categories,
     },
   })
 
-  games.data.allStrapiGame.edges.map(game => {
+  // Game Detail
+  allGames.map(game => {
     createPage({
-      path: `/game/${game.node.slug}`,
+      path: `/game/${game.slug}`,
       component: gameTemplatePath,
       context: {
-        game: game.node,
+        gid: game.gid,
+        game,
+        allGames,
+        categories,
       },
     })
   })
 
-  categories.data.allStrapiCategory.nodes.map(category => {
+  // Category
+  categories.map(category => {
     createPage({
       path: `/category/${category.slug}`,
       component: categoryTemplatePath,
       context: {
-        category: category,
+        category,
+        allGames,
+        categories,
       },
     })
   })
