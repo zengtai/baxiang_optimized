@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import List from "../components/list"
 import Banner from "../components/banner"
+import { ADS_SLOT_ID } from "../lib/constants"
 
 export default function CategoryTemplate({
   pageContext: { category, games, categories },
@@ -16,7 +17,7 @@ export default function CategoryTemplate({
       <Banner
         className={`banner`}
         style={{ display: "block" }}
-        slot="1977361307"
+        slot={ADS_SLOT_ID.category}
         responsive="false"
       />
 
@@ -38,7 +39,7 @@ export default function CategoryTemplate({
         <Banner
           className={`banner mb-6`}
           style={{ display: "block" }}
-          slot="1977361307"
+          slot={ADS_SLOT_ID.category}
           responsive="false"
         />
       ) : null}

@@ -6,17 +6,20 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import List from "../components/list"
 import Banner from "../components/banner"
+import { ADS_SLOT_ID } from "../lib/constants"
 
 const Home = ({ pageContext: data }) => {
-  console.log(data.categories)
+  // console.log(data.categories)
   const categories = data.categories
+
+  console.log(ADS_SLOT_ID)
   return (
     <Layout navItems={categories}>
       <Seo title="Home" />
       <Banner
         className={`banner`}
         style={{ display: "block" }}
-        slot="1977361307"
+        slot={ADS_SLOT_ID.home}
         responsive="false"
       />
 
@@ -33,7 +36,7 @@ const Home = ({ pageContext: data }) => {
       <Banner
         className={`banner mb-6`}
         style={{ display: "block" }}
-        slot="1977361307"
+        slot={ADS_SLOT_ID.home}
         format=""
         responsive="false"
       />

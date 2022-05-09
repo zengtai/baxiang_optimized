@@ -4,23 +4,27 @@ import Seo from "../components/seo"
 import Detail from "../components/detail"
 import List from "../components/list"
 import Banner from "../components/banner"
+import { ADS_SLOT_ID } from "../lib/constants"
 
 import { graphql } from "gatsby"
 
 export default function GameTemplate({ data }) {
   const game = data.strapiGame
   const relatedGames = data.allStrapiGame.nodes
+
+  console.log(data)
+  console.log(ADS_SLOT_ID.game)
   return (
     <Layout>
       <Seo title={`game.title`} />
-      <div className="mb-3 h-[100px] w-[360px] bg-black/10">
-        <Banner
-          className={`banner`}
-          style={{ display: "block" }}
-          slot="1977361307"
-          responsive="false"
-        />
-      </div>
+
+      <Banner
+        className={`banner`}
+        style={{ display: "block" }}
+        slot={ADS_SLOT_ID.game}
+        responsive="false"
+      />
+
       <div className="container mx-auto">
         <Detail game={game} />
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
@@ -31,7 +35,7 @@ export default function GameTemplate({ data }) {
       <Banner
         className={`banner mb-6`}
         style={{ display: "block" }}
-        slot="1977361307"
+        slot={ADS_SLOT_ID.game}
         responsive="false"
       />
     </Layout>
