@@ -19,7 +19,7 @@ export default function List({ items, type }) {
   if (type === "card") {
     return (
       <>
-        <ul className="my-4 mx-3 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:my-6 xl:grid-cols-6">
+        <ul className="my-4 mx-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:my-6 xl:grid-cols-6">
           {items.map((item, index) => {
             let game = item.node || item
             return <ListItem item={game} key={index} type={type} />

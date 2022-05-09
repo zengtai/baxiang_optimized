@@ -8,13 +8,14 @@ export default function ListItem({ item, type }) {
       <li className="flex flex-col items-center">
         <Link
           to={`/game/${item.slug}`}
-          className="group relative h-24 w-24 transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110"
+          className="group relative transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110"
         >
           <img
             src={item.icon_url}
             alt={item.title}
-            className="object-fit"
             loading="lazy"
+            width={100}
+            height={100}
           />
 
           <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
@@ -29,12 +30,14 @@ export default function ListItem({ item, type }) {
       <li>
         <Link
           to={`/game/${item.slug}`}
-          className="group relative block h-24 transform overflow-hidden rounded-xl bg-white/10 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110"
+          className="group relative block h-[100px] transform overflow-hidden rounded-xl bg-white/10 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110"
         >
           <img
             src={item.icon_url}
             alt={item.title}
-            className="absolute left-0 h-24 w-24 "
+            className="absolute left-0"
+            width={100}
+            height={100}
             loading="lazy"
           />
           <h2 className="py-2">{item.title}</h2>

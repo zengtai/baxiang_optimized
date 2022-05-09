@@ -29,9 +29,9 @@ export default function Detail({ game }) {
           <div className="text-center md:text-left">
             <Link
               to={`/category/${game.category.slug}`}
-              className="inline-block rounded-md bg-sky-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-sky-500/30"
+              className="inline-block scale-90 rounded-md bg-sky-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-sky-500/30"
             >
-              <span>{game.category.name}</span>
+              <span className="uppercase">{game.category.name}</span>
             </Link>
           </div>
           <div className="py-3 text-left text-xs text-sky-800/80 md:text-sm">

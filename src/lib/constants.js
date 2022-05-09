@@ -7,3 +7,5 @@ export const ADS_SLOT_ID = {
   category: "1977361307",
   game: "1977361307",
 }
+
+export const FEATURED_GAMES = ["Fire The Gun", "Crazy Moto", "Fever Racing"]

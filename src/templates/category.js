@@ -23,7 +23,7 @@ export default function CategoryTemplate({
 
       <div className="container mx-auto grow">
         <h2 className="px-4 text-center text-lg font-bold">
-          All {category.name}{" "}
+          {category.name}{" "}
           {allGames.length > 1 ? `Games (${allGames.length})` : `Game`}
         </h2>
         {allGames.length > 6 ? (
