@@ -17,12 +17,11 @@ export default function CategoryTemplate({
         className={`banner`}
         style={{ display: "block" }}
         slot="1977361307"
-        format=""
         responsive="false"
       />
 
       <div className="container mx-auto grow">
-        <h2 className="px-4 text-lg font-bold">
+        <h2 className="px-4 text-center text-lg font-bold">
           All {category.name} {allGames.length > 1 ? `Games` : `Game`} (
           {allGames.length})
         </h2>
@@ -32,7 +31,6 @@ export default function CategoryTemplate({
         className={`banner mb-6`}
         style={{ display: "block" }}
         slot="1977361307"
-        format=""
         responsive="false"
       />
     </Layout>

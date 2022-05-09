@@ -18,7 +18,6 @@ export default function GameTemplate({ data }) {
           className={`banner`}
           style={{ display: "block" }}
           slot="1977361307"
-          format=""
           responsive="false"
         />
       </div>
@@ -33,7 +32,6 @@ export default function GameTemplate({ data }) {
         className={`banner mb-6`}
         style={{ display: "block" }}
         slot="1977361307"
-        format=""
         responsive="false"
       />
     </Layout>

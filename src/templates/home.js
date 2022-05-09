@@ -17,7 +17,6 @@ const Home = ({ pageContext: data }) => {
         className={`banner`}
         style={{ display: "block" }}
         slot="1977361307"
-        format=""
         responsive="false"
       />
 

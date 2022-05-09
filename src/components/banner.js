@@ -18,12 +18,13 @@ const Banner = ({
       console.error(e)
     }
   }, [])
+
   return (
     <div
       className={`${className} AdContiainer mx-auto mb-3 flex justify-center bg-black/10`}
     >
       <ins
-        className="adsbygoogle"
+        className={`adsbygoogle AdContiainer`}
         style={style}
         data-ad-layout={layout}
         data-ad-format={format}
