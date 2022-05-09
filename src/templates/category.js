@@ -22,17 +22,26 @@ export default function CategoryTemplate({
 
       <div className="container mx-auto grow">
         <h2 className="px-4 text-center text-lg font-bold">
-          All {category.name} {allGames.length > 1 ? `Games` : `Game`} (
-          {allGames.length})
+          All {category.name}{" "}
+          {allGames.length > 1 ? `Games (${allGames.length})` : `Game`}
         </h2>
-        <List items={allGames} type="grid" />
+        {allGames.length > 6 ? (
+          <>
+            <List items={allGames.slice(0, 6)} type="card" />
+            <List items={allGames.slice(6)} type="grid" />
+          </>
+        ) : (
+          <List items={allGames} type="card" />
+        )}
       </div>
-      <Banner
-        className={`banner mb-6`}
-        style={{ display: "block" }}
-        slot="1977361307"
-        responsive="false"
-      />
+      {allGames.length > 6 ? (
+        <Banner
+          className={`banner mb-6`}
+          style={{ display: "block" }}
+          slot="1977361307"
+          responsive="false"
+        />
+      ) : null}
     </Layout>
   )
 }
