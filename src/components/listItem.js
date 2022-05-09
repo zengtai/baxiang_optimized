@@ -4,14 +4,15 @@ import { Link } from "gatsby"
 export default function ListItem({ item, type, lazy, focus, order }) {
   // console.log(item)
   console.log(order)
-  let delay
-  if (order > 1) {
-    delay = `4s`
-  } else if (order == 1) {
-    delay = `6s`
-  } else {
-    delay = `5.5s`
-  }
+  // let delay
+  // if (order > 1) {
+  //   delay = `4s`
+  // } else if (order == 1) {
+  //   delay = `6s`
+  // } else {
+  //   delay = `${(Math.random() * 10).toFixed(1)}s`
+  // }
+  let delay = `${(Math.random() * 10).toFixed(1)}s`
 
   if (type === "grid") {
     return (
