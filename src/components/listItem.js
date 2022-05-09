@@ -5,12 +5,12 @@ export default function ListItem({ item, type, lazy, focus, order }) {
   // console.log(item)
   console.log(order)
   let delay
-  if (order > -1) {
+  if (order > 1) {
     delay = `4s`
-  } else if (order == -1) {
+  } else if (order == 1) {
     delay = `6s`
   } else {
-    delay = `5s`
+    delay = `5.5s`
   }
 
   if (type === "grid") {
@@ -43,6 +43,7 @@ export default function ListItem({ item, type, lazy, focus, order }) {
       <li>
         <Link
           to={`/game/${item.slug}`}
+          style={{ animationDelay: `${delay}` }}
           className={`${
             focus ? `focus` : ``
           } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-cyan-700 to-blue-600 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}

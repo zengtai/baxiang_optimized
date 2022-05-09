@@ -18,7 +18,7 @@ export default function List({ items, type, lazy, focus }) {
                 type={type}
                 lazy={lazy}
                 focus={focus}
-                order={focus && index < 3 ? (index * -1).toString() : ``}
+                order={focus && index < 3 ? index : ``}
               />
             )
           })}
@@ -32,7 +32,16 @@ export default function List({ items, type, lazy, focus }) {
         <ul className="my-4 mx-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:my-6 xl:grid-cols-6">
           {items.map((item, index) => {
             let game = item.node || item
-            return <ListItem item={game} key={index} type={type} lazy={lazy} />
+            return (
+              <ListItem
+                item={game}
+                key={index}
+                type={type}
+                lazy={lazy}
+                focus={focus}
+                order={focus && index < 3 ? index : ``}
+              />
+            )
           })}
         </ul>
       </>
