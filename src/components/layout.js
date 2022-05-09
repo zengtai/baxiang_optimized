@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Navbar from "./navbar"
 
-export default function Layout({ navItems, children }) {
+export default function Layout({ navItems, children, menuOpen }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,6 +21,7 @@ export default function Layout({ navItems, children }) {
       <Navbar
         siteTitle={data.site.siteMetadata.title || `Title`}
         items={navItems}
+        menuOpen={menuOpen}
       />
 
       <main className="flex grow flex-col">{children}</main>

@@ -3,8 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import getIcon from "../components/icons"
 // import iconList from "../components/icons"
 
-export default function Navbar({ siteTitle, items }) {
-  const [isOpen, setOpen] = React.useState(false)
+export default function Navbar({ siteTitle, items, menuOpen }) {
+  const [isOpen, setOpen] = React.useState(menuOpen)
 
   const isActive = ({ isCurrent }) => {
     return isCurrent

@@ -501,6 +501,10 @@ exports.createPages = async ({ graphql, actions }) => {
           icon_url
           title
           slug
+          category {
+            slug
+            name
+          }
         }
       }
     }
@@ -510,7 +514,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const gameTemplatePath = path.resolve(`./src/templates/game.js`)
   const categoryTemplatePath = path.resolve(`./src/templates/category.js`)
 
-  const allGames = games.data.allStrapiGame.nodes
+  // const allGames = games.data.allStrapiGame.nodes
   const categories = allCategories.data.allStrapiCategory.nodes
   const dataHome = gamesDataHome.data.allStrapiGame.nodes
   const dataCategory = gamesDataCategory.data.allStrapiGame.nodes

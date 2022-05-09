@@ -10,7 +10,7 @@ export default function CategoryTemplate({
   const allGames = games.filter(game => game.category.name === category.name)
 
   return (
-    <Layout navItems={categories}>
+    <Layout navItems={categories} menuOpen>
       <Seo title={category.name} />
 
       <Banner

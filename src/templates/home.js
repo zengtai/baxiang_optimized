@@ -21,8 +21,14 @@ const Home = ({ pageContext: data }) => {
       />
 
       <div className="container mx-auto">
-        <h2 className="px-4 text-lg font-bold">All Games</h2>
-        <List items={data.dataHome} type="grid" />
+        <h2 className="px-4 text-lg font-bold">
+          All Games ({data.dataHome.length})
+        </h2>
+        <List items={data.dataHome.slice(0, 3)} type="grid" />
+        <List items={data.dataHome.slice(3, 9)} type="card" />
+        <List items={data.dataHome.slice(9, 21)} type="grid" />
+        <List items={data.dataHome.slice(21, 71)} type="grid" />
+        <List items={data.dataHome.slice(71)} type="card" />
       </div>
       <Banner
         className={`banner mb-6`}
