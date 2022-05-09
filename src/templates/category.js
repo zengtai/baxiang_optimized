@@ -29,7 +29,7 @@ export default function CategoryTemplate({
         {allGames.length > 6 ? (
           <>
             <List items={allGames.slice(0, 6)} type="card" />
-            <List items={allGames.slice(6)} type="grid" />
+            <List items={allGames.slice(6)} type="grid" lazy={true} />
           </>
         ) : (
           <List items={allGames} type="card" />

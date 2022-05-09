@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-export default function ListItem({ item, type }) {
+export default function ListItem({ item, type, lazy }) {
   // console.log(item)
   if (type === "grid") {
     return (
@@ -13,7 +13,7 @@ export default function ListItem({ item, type }) {
           <img
             src={item.icon_url}
             alt={item.title}
-            loading="lazy"
+            loading={lazy ? "lazy" : "eager"}
             width={100}
             height={100}
           />
@@ -38,7 +38,7 @@ export default function ListItem({ item, type }) {
             className="absolute left-0"
             width={100}
             height={100}
-            loading="lazy"
+            loading={lazy ? "lazy" : "eager"}
           />
           <h2 className="py-2">{item.title}</h2>
           <span className="inline-block origin-left scale-90 rounded-md bg-black/10 px-1.5 py-1 text-xs">
