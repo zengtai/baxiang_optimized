@@ -1,14 +1,27 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-export default function ListItem({ item, type, lazy }) {
+export default function ListItem({ item, type, lazy, focus, order }) {
   // console.log(item)
+  console.log(order)
+  let delay
+  if (order > -1) {
+    delay = `4s`
+  } else if (order == -1) {
+    delay = `6s`
+  } else {
+    delay = `5s`
+  }
+
   if (type === "grid") {
     return (
-      <li className="flex flex-col items-center">
+      <li className={`flex flex-col items-center`}>
         <Link
           to={`/game/${item.slug}`}
-          className="group relative transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110"
+          style={{ animationDelay: `${delay}` }}
+          className={`${
+            focus ? `focus` : ""
+          } group relative transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110`}
         >
           <img
             src={item.icon_url}
@@ -30,7 +43,9 @@ export default function ListItem({ item, type, lazy }) {
       <li>
         <Link
           to={`/game/${item.slug}`}
-          className="group relative block h-[100px] transform overflow-hidden rounded-xl bg-white/10 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110"
+          className={`${
+            focus ? `focus` : ``
+          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-cyan-700 to-blue-600 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}
         >
           <img
             src={item.icon_url}

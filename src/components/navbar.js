@@ -10,7 +10,7 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
     return isCurrent
       ? {
           className:
-            "block lg:scale-110 rounded-lg border-2 border-white/30 bg-white/30 p-2 text-sm",
+            "block lg:scale-110 rounded-lg border-2 border-white/20 bg-white/20 p-2 text-sm",
         }
       : {}
   }
@@ -175,7 +175,7 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
                   getProps={isActive}
                   to={`/category/${item.slug}`}
                   title={`${item.name} Games`}
-                  className={`animated block transform rounded-lg border-2 border-white/10 bg-white/10 p-2 text-sm duration-300 ease-in-out lg:border-transparent lg:bg-transparent lg:hover:scale-110 lg:hover:bg-white/20`}
+                  className={`animated block transform rounded-lg border-2 border-white/10 bg-white/10 p-2 text-sm duration-300 ease-in-out lg:border-transparent lg:bg-transparent lg:hover:scale-125 lg:hover:bg-white/20`}
                 >
                   <div className="flex scale-95 items-center space-x-1">
                     <span>{getIcon(item.slug)}</span>

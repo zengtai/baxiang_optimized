@@ -54,3 +54,62 @@
     height: 250px;
   }
 }
+
+.focus:hover {
+  animation: dance 0.84s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-iteration-count: infinite;
+}
+
+.focus {
+  animation: 4s ease-in-out 5s infinite normal none running dance;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes dance {
+  26% {
+    transform: rotate(0deg) scale(1);
+  }
+  28% {
+    transform: rotate(-2deg) scale(1.04);
+  }
+  32% {
+    transform: rotate(1deg) scale(1.01);
+  }
+  34% {
+    transform: rotate(-2deg) scale(1.02);
+  }
+  36% {
+    transform: rotate(3deg) scale(1);
+  }
+  39% {
+    transform: rotate(-1deg) scale(1);
+  }
+  44% {
+    transform: rotate(0deg) scale(1);
+  }
+}
