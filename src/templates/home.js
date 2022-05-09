@@ -12,7 +12,7 @@ const Home = ({ pageContext: data }) => {
   // console.log(data.categories)
   const categories = data.categories
 
-  console.log(ADS_SLOT_ID)
+  // console.log(ADS_SLOT_ID)
   return (
     <Layout navItems={categories}>
       <Seo title="Home" />
