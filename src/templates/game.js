@@ -46,9 +46,8 @@ export const query = graphql`
   query MyQuery($gid: Int) {
     strapiGame(gid: { eq: $gid }) {
       description
-      gid
       icon_url
-      game_url
+      appid
       title
       category {
         name

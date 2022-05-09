@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { GAME_PATH } from "../lib/constants"
 
 export default function Detail({ game }) {
   return (
@@ -41,7 +42,7 @@ export default function Detail({ game }) {
       <div className="mx-3 py-4">
         <a
           className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
-          href={game.game_url}
+          href={`${GAME_PATH}${game.appid}`}
         >
           Play Now
         </a>
