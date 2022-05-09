@@ -3,7 +3,7 @@ import ListItem from "./listItem"
 
 export default function List({ items, type, lazy, focus }) {
   // console.log(items)
-  console.log(focus)
+  // console.log(focus)
 
   if (type === "grid") {
     return (

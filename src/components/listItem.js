@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function ListItem({ item, type, lazy, focus, order }) {
   // console.log(item)
-  console.log(order)
+  // console.log(order)
   // let delay
   // if (order > 1) {
   //   delay = `4s`
