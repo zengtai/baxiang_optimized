@@ -12,8 +12,8 @@ export default function GameTemplate({ data }) {
   const game = data.strapiGame
   const relatedGames = data.allStrapiGame.nodes
 
-  console.log(data)
-  console.log(ADS_SLOT_ID.game)
+  // console.log(data)
+  // console.log(ADS_SLOT_ID.game)
   return (
     <Layout>
       <Seo title={`game.title`} />
