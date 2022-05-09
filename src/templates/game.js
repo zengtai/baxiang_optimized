@@ -16,7 +16,7 @@ export default function GameTemplate({ data }) {
   // console.log(ADS_SLOT_ID.game)
   return (
     <Layout>
-      <Seo title={`game.title`} />
+      <Seo title={game.title} />
 
       <Banner
         className={`banner`}

@@ -12,7 +12,7 @@ export default function CategoryTemplate({
 
   return (
     <Layout navItems={categories} menuOpen>
-      <Seo title={category.name} />
+      <Seo title={`${category.name} Games`} />
 
       <Banner
         className={`banner`}
