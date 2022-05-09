@@ -29,7 +29,7 @@ const Home = ({ pageContext: data }) => {
       />
 
       <div className="container mx-auto">
-        <h2 className="px-4 text-lg font-bold">
+        <h2 className="px-4 text-center text-lg font-bold">
           All Games ({allGames.length})
         </h2>
         <List items={topGames} type="grid" focus />
