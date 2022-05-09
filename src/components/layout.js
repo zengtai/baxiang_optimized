@@ -23,7 +23,7 @@ export default function Layout({ navItems, children }) {
         items={navItems}
       />
 
-      <main className="grow">{children}</main>
+      <main className="flex grow flex-col">{children}</main>
       <footer className="flex justify-center bg-sky-600/50 py-7">
         <div className="container scale-90 text-center">
           © {new Date().getFullYear()} &middot; {data.site.siteMetadata.title}

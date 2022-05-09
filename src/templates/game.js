@@ -15,11 +15,11 @@ export default function GameTemplate({ data }) {
       <Seo title={`game.title`} />
       <div className="mb-3 h-[100px] w-[360px] bg-black/10">
         <Banner
-          className="adsbygoogle"
+          className={`banner`}
           style={{ display: "block" }}
           slot="1977361307"
           format=""
-          responsive="true"
+          responsive="false"
         />
       </div>
       <div className="container mx-auto">
@@ -29,6 +29,13 @@ export default function GameTemplate({ data }) {
         </h2>
         <List items={relatedGames} type="grid" />
       </div>
+      <Banner
+        className={`banner mb-6`}
+        style={{ display: "block" }}
+        slot="1977361307"
+        format=""
+        responsive="false"
+      />
     </Layout>
   )
 }

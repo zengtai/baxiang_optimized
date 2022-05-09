@@ -10,7 +10,12 @@ export default function ListItem({ item, type }) {
           to={`/game/${item.slug}`}
           className="group relative h-24 w-24 transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110"
         >
-          <img src={item.icon_url} alt={item.title} className="object-fit" />
+          <img
+            src={item.icon_url}
+            alt={item.title}
+            className="object-fit"
+            loading="lazy"
+          />
 
           <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
             <span className="scale-95 text-xs">{item.title}</span>

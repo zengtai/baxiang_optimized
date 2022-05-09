@@ -13,19 +13,25 @@ const Home = ({ pageContext: data }) => {
   return (
     <Layout navItems={categories}>
       <Seo title="Home" />
-      <div className="mb-3 h-[100px] w-[360px] bg-black/10">
-        <Banner
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          slot="1977361307"
-          format=""
-          responsive="true"
-        />
-      </div>
+      <Banner
+        className={`banner`}
+        style={{ display: "block" }}
+        slot="1977361307"
+        format=""
+        responsive="false"
+      />
+
       <div className="container mx-auto">
         <h2 className="px-4 text-lg font-bold">All Games</h2>
         <List items={data.dataHome} type="grid" />
       </div>
+      <Banner
+        className={`banner mb-6`}
+        style={{ display: "block" }}
+        slot="1977361307"
+        format=""
+        responsive="false"
+      />
     </Layout>
   )
 }

@@ -124,7 +124,7 @@ export default function Navbar({ siteTitle, items }) {
   const navItems = items || categories.allStrapiCategory.nodes
 
   return (
-    <header className="px-3 pt-6 md:pt-0">
+    <header className="px-3 pt-6 lg:pt-0">
       <nav className="container relative mx-auto my-4 rounded-3xl bg-gradient-to-br from-cyan-600 to-blue-500 shadow-lg shadow-black/20 lg:my-6 lg:rounded-full">
         <Link
           to="/"

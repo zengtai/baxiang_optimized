@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 
 const Banner = ({
+  className,
   style,
   layout,
   format,
@@ -18,7 +19,9 @@ const Banner = ({
     }
   }, [])
   return (
-    <div className="mb-3 bg-black/10">
+    <div
+      className={`${className} AdContiainer mx-auto mb-3 flex justify-center bg-black/10`}
+    >
       <ins
         className="adsbygoogle"
         style={style}

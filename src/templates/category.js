@@ -12,22 +12,29 @@ export default function CategoryTemplate({
   return (
     <Layout navItems={categories}>
       <Seo title={category.name} />
-      <div className="mb-3 h-[100px] w-[360px] bg-black/10">
-        <Banner
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          slot="1977361307"
-          format=""
-          responsive="true"
-        />
-      </div>
-      <div className="container mx-auto">
+
+      <Banner
+        className={`banner`}
+        style={{ display: "block" }}
+        slot="1977361307"
+        format=""
+        responsive="false"
+      />
+
+      <div className="container mx-auto grow">
         <h2 className="px-4 text-lg font-bold">
           All {category.name} {allGames.length > 1 ? `Games` : `Game`} (
           {allGames.length})
         </h2>
         <List items={allGames} type="grid" />
       </div>
+      <Banner
+        className={`banner mb-6`}
+        style={{ display: "block" }}
+        slot="1977361307"
+        format=""
+        responsive="false"
+      />
     </Layout>
   )
 }
