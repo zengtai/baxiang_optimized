@@ -1,4 +1,4 @@
-const { format } = require("prettier")
+// const { format } = require("prettier")
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -11,7 +11,7 @@ module.exports = {
     author: `@SuperEasyGame`,
     siteUrl: `https://www.supereasygame.com/`,
   },
-  pathPrefix: `/webs/baxiang/baxiang_main_new_2`,
+  pathPrefix: `/webs/baxiang/baxiang_main_new_3`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
