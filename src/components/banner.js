@@ -21,10 +21,10 @@ const Banner = ({
 
   return (
     <div
-      className={`${className} AdContiainer mx-auto mb-3 flex justify-center bg-black/10`}
+      className={`${className} AdContainer relative mx-auto mb-3 flex justify-center overflow-hidden bg-black/10 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:text-xs after:text-white/20 after:content-['ADVERTISEMENT']`}
     >
       <ins
-        className={`adsbygoogle AdContiainer`}
+        className={`adsbygoogle AdContainer`}
         style={style}
         data-ad-layout={layout}
         data-ad-format={format}

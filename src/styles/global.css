@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @media (min-width: 300px) {
-  .AdContiainer {
+  .AdContainer {
     width: 300px;
   }
   .banner {
@@ -17,7 +17,7 @@
   }
 }
 @media (min-width: 320px) {
-  .AdContiainer {
+  .AdContainer {
     width: 320px;
   }
   .banner {
@@ -34,19 +34,19 @@
   }
 }
 @media (min-width: 468px) {
-  .AdContiainer {
+  .AdContainer {
     width: 468px;
     height: 60px;
   }
 }
 @media (min-width: 728px) {
-  .AdContiainer {
+  .AdContainer {
     width: 728px;
     height: 90px;
   }
 }
 @media (min-width: 970px) {
-  .AdContiainer {
+  .AdContainer {
     width: 970px;
     height: 90px;
   }
