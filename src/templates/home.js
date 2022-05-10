@@ -33,7 +33,7 @@ const Home = ({ pageContext: data }) => {
           All Games ({allGames.length})
         </h2>
         <List items={topGames} type="grid" focus />
-        <List items={normalGames.slice(0, 6)} type="card" focus />
+        <List items={normalGames.slice(0, 6)} type="card" />
         <List items={normalGames.slice(6, 42)} type="grid" lazy={true} />
         <Banner
           className={`banner rectangle mb-6`}
