@@ -7,19 +7,19 @@
 // You can delete this file if you're not using it
 const React = require("react")
 
-const headComponents = [
-  <script
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9209477879340784"
-    crossOrigin="anonymous"
-    async
-  />,
-]
+// const headComponents = [
+//   <script
+//     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9209477879340784"
+//     crossOrigin="anonymous"
+//     async
+//   />,
+// ]
 
-exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
-  setHeadComponents(headComponents)
-}
+// exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
+//   setHeadComponents(headComponents)
+// }
 
-/* const postBodyComponents = [
+const postBodyComponents = [
   <script
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9209477879340784"
     crossOrigin="anonymous"
@@ -29,4 +29,4 @@ exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
 
 exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
   setPostBodyComponents(postBodyComponents)
-} */
+}
