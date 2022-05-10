@@ -81,7 +81,7 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
                   "RoadCharger"
                   "ArcheryMaster"
                   "UltraDrift"
-                  "SharkisComing"
+                  "SharkIsComing"
                   "PuppyRun"
                   "PenguinDash"
                   "MonsterCrash"

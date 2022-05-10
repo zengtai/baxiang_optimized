@@ -113,7 +113,7 @@ export const query = graphql`
             "RoadCharger"
             "ArcheryMaster"
             "UltraDrift"
-            "SharkisComing"
+            "SharkIsComing"
             "PuppyRun"
             "PenguinDash"
             "MonsterCrash"
