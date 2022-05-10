@@ -26,10 +26,7 @@
   .banner_sm {
     height: 50px;
   }
-}
-@media (min-width: 336px) {
   .rectangle {
-    width: 336px;
     height: 280px;
   }
 }

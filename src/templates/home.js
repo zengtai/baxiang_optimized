@@ -35,17 +35,17 @@ const Home = ({ pageContext: data }) => {
         <List items={topGames} type="grid" focus />
         <List items={normalGames.slice(0, 6)} type="card" focus />
         <List items={normalGames.slice(6, 42)} type="grid" lazy={true} />
+        <Banner
+          className={`banner rectangle mb-6`}
+          style={{ display: "block" }}
+          slot={ADS_SLOT_ID.home}
+          format=""
+          responsive="false"
+        />
         <List items={normalGames.slice(42, 48)} type="card" lazy={true} />
         <List items={normalGames.slice(48, 72)} type="grid" lazy={true} />
         <List items={normalGames.slice(72)} type="card" lazy={true} />
       </div>
-      <Banner
-        className={`banner mb-6`}
-        style={{ display: "block" }}
-        slot={ADS_SLOT_ID.home}
-        format=""
-        responsive="false"
-      />
     </Layout>
   )
 }
