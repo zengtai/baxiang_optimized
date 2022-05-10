@@ -3,9 +3,9 @@ export const ADS_ID = `ca-pub-9209477879340784`
 export const GA_ID = `UA-183890722-16`
 
 export const ADS_SLOT_ID = {
-  home: "1977361307",
-  category: "1977361307",
-  game: "1977361307",
+  home: "3055394511",
+  category: "8598905129",
+  game: "2156785701",
 }
 
 export const FEATURED_GAMES = ["Fire The Gun", "Crazy Moto", "Fever Racing"]
