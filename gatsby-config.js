@@ -1,3 +1,5 @@
+const { format } = require("prettier")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -34,6 +36,7 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+      // env: process.env.development,
     },
     {
       resolve: "gatsby-source-strapi",
@@ -44,7 +47,15 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          quality: 75,
+          formats: ["auto", "webp", "avif"],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -59,13 +70,13 @@ module.exports = {
         icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-remote-images`,
-    //   options: {
-    //     nodeType: "STRAPI_GAME",
-    //     imagePath: "icon_url",
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "STRAPI_GAME",
+        imagePath: "icon_url",
+      },
+    },
     "gatsby-plugin-postcss",
     {
       resolve: `gatsby-plugin-nprogress`,

@@ -1,4 +1,6 @@
 const path = require(`path`)
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
+const { error } = require("console")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -98,111 +100,6 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           name
           slug
-        }
-      }
-    }
-  `)
-
-  const games = await graphql(`
-    query SiteNavQuery {
-      allStrapiGame(
-        sort: { fields: creation_date, order: DESC }
-        filter: {
-          appid: {
-            in: [
-              "Knife"
-              "JumpSmash"
-              "CrazyMoto"
-              "CrazyKart3D"
-              "FireTheGun"
-              "FeverRacing"
-              "ColorBall3D"
-              "CrazyKnife"
-              "BoardTheTrain"
-              "MrRacer"
-              "BigSword"
-              "HiTaxi"
-              "TrafficRun"
-              "MrBullet"
-              "LetMeIn"
-              "SnakeGo"
-              "DessertConnect"
-              "SwiftRider"
-              "CrackShot"
-              "CrazyGunfight"
-              "GoldenGlove"
-              "ColorRing"
-              "PianoKeys"
-              "ArchersKing"
-              "MyBabyCare"
-              "DartsKing3D"
-              "CrazyRace"
-              "BallIsComing"
-              "HungyBunny"
-              "TheSameWorld"
-              "SuperMiner"
-              "BounceShooter"
-              "HillRacing"
-              "BatterKing"
-              "BlockGun3D"
-              "ZombieSurvival"
-              "FruitMonster"
-              "FierceCity"
-              "IronAttack"
-              "AceMan"
-              "AirBrawl"
-              "BumbleShooter"
-              "AmazingRoad"
-              "RainbowSplash"
-              "MagicParkour"
-              "CrazyDrift"
-              "FisherMan"
-              "FruitsFall"
-              "RocketJump"
-              "MagicPaint"
-              "GlidingCharger"
-              "RoadCharger"
-              "ArcheryMaster"
-              "UltraDrift"
-              "SharkIsComing"
-              "PuppyRun"
-              "PenguinDash"
-              "MonsterCrash"
-              "DeathJump"
-              "HungryMonster"
-              "HungryAnimals"
-              "JumpingMonkey"
-              "MergeKill"
-              "CrazyTrain3D"
-              "CrazyHammer"
-              "VirusWar"
-              "TrappedPirate"
-              "StickmanVsZombies"
-              "FingerCannon"
-              "BulletMan"
-              "KnockBalls"
-              "GunShooter"
-              "MergeGuns3D"
-              "BulletMaster3D"
-              "CrashTower3D"
-              "TowerBlast3D"
-              "ShootSmash"
-              "ShootingCubes"
-            ]
-          }
-        }
-      ) {
-        nodes {
-          game_url
-          icon_url
-          title
-          description
-          slug
-          gid
-          category {
-            slug
-            name
-          }
         }
       }
     }
@@ -554,3 +451,42 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+// exports.createRemoteFileNode = ({ actions }) => {
+//   const { createType } = actions
+
+//   createType(`
+//     type STRAPI_GAME implements Node {
+//       frontmatter: FrontMatter
+//       iconImg: File @link(from: "fields.localFile")
+//     }
+
+//     type FrontMatter {
+//       icon_url: String
+//     }
+//   `)
+// }
+
+// exports.onCreateNode = async ({
+//   node,
+//   actions: { createNode, createNodeField },
+//   createNodeId,
+//   cache,
+// }) => {
+//   if (node.internal.type === "STRAPI_GAME" && node.icon_url !== null) {
+//     try {
+//       const fileNode = await createRemoteFileNode({
+//         url: node.icon_url,
+//         parentNodeId: node.id,
+//         cache,
+//         createNode,
+//         createNodeId,
+//       })
+//       if (fileNode) {
+//         createNodeField({ node, name: "localFile", value: fileNode.id })
+//       }
+//     } catch (error) {
+//       console.error(error)
+//     }
+//   }
+// }

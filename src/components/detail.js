@@ -1,6 +1,7 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { GAME_PATH } from "../lib/constants"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Detail({ game }) {
   return (

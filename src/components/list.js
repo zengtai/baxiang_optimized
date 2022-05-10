@@ -14,7 +14,6 @@ export default function List({ items, type, lazy, focus }) {
             return (
               <ListItem
                 item={game}
-                key={index}
                 type={type}
                 lazy={lazy}
                 focus={focus}
@@ -35,7 +34,6 @@ export default function List({ items, type, lazy, focus }) {
             return (
               <ListItem
                 item={game}
-                key={index}
                 type={type}
                 lazy={lazy}
                 focus={focus}

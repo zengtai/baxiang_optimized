@@ -17,7 +17,7 @@ const Home = ({ pageContext: data }) => {
     game => !FEATURED_GAMES.includes(game.title)
   )
 
-  console.log(topGames)
+  // console.log(topGames)
   return (
     <Layout navItems={categories}>
       <Seo title="Home" />

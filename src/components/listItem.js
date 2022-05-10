@@ -16,7 +16,7 @@ export default function ListItem({ item, type, lazy, focus, order }) {
 
   if (type === "grid") {
     return (
-      <li className={`flex flex-col items-center`}>
+      <li className={`flex flex-col items-center`} key={item.slug}>
         <Link
           to={`/game/${item.slug}`}
           style={{ animationDelay: `${delay}` }}
@@ -41,7 +41,7 @@ export default function ListItem({ item, type, lazy, focus, order }) {
   }
   if (type === "card") {
     return (
-      <li>
+      <li key={item.slug}>
         <Link
           to={`/game/${item.slug}`}
           style={{ animationDelay: `${delay}` }}
