@@ -54,7 +54,6 @@ module.exports = {
           backgroundColor: `transparent`,
           placeholder: `dominantColor`,
         },
-        background: `rgba(0,0,0,5)`,
         defaultQuality: 78,
         failOnError: false,
       },

@@ -6,7 +6,7 @@ import Image from "./image"
 
 export default function ListItem({ item, type, lazy, focus }) {
   let delay = `${(Math.random() * 10).toFixed(1)}s`
-  console.log(item)
+  // console.log(item)
   if (type === "grid") {
     // console.log(gameImg)
     return (
