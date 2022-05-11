@@ -16,9 +16,10 @@ const renderLoader = () => (
 )
 
 const Home = ({ pageContext: data }) => {
+  console.log(data)
   // console.log(data.categories)
   const categories = data.categories
-  const allGames = data.dataHome
+  const allGames = data.games
   const topGames = allGames.filter(game => FEATURED_GAMES.includes(game.title))
   const normalGames = allGames.filter(
     game => !FEATURED_GAMES.includes(game.title)

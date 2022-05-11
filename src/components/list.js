@@ -1,9 +1,10 @@
 import * as React from "react"
 import ListItem from "./listItem"
 
-export default function List({ items, type, lazy, focus }) {
+export default function List({ items, type, lazy, focus, gameImgs }) {
   // console.log(items)
   // console.log(focus)
+  // console.log(gameImgs)
 
   if (type === "grid") {
     return (

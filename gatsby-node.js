@@ -197,6 +197,7 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           slug
           gid
+          appid
         }
       }
     }
@@ -422,8 +423,8 @@ exports.createPages = async ({ graphql, actions }) => {
     path: `/`,
     component: homeTemplatePath,
     context: {
-      dataHome,
-      categories,
+      games: dataHome,
+      categories: categories,
     },
   })
 
@@ -433,7 +434,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/game/${game.slug}`,
       component: gameTemplatePath,
       context: {
-        gid: game.gid,
+        // gid: game.gid,
+        appid: game.appid,
       },
     })
   })

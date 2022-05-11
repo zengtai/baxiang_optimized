@@ -11,40 +11,64 @@ import { graphql } from "gatsby"
 export default function GameTemplate({ data }) {
   const game = data.strapiGame
   const relatedGames = data.allStrapiGame.nodes
-
-  // console.log(data)
+  const relatedGamesImgs = data.allFile.nodes
+  const gameImg = data.file.childImageSharp.gatsbyImageData
   // console.log(ADS_SLOT_ID.game)
   return (
     <Layout>
       <Seo title={game.title} />
 
-      <Banner
+      {/* <Banner
         className={`banner`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.game}
         responsive="false"
-      />
+      /> */}
 
       <div className="container mx-auto">
-        <Detail game={game} />
+        <Detail game={game} gameImg={gameImg} />
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
           You May Also Like
         </h2>
         <List items={relatedGames} type="grid" />
       </div>
-      <Banner
+
+      {/* <Banner
         className={`banner mb-6`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.game}
         responsive="false"
-      />
+      /> */}
     </Layout>
   )
 }
 
 export const query = graphql`
-  query MyQuery($gid: Int) {
-    strapiGame(gid: { eq: $gid }) {
+  query MyQuery($appid: String) {
+    file(relativeDirectory: { eq: "games" }, name: { eq: $appid }) {
+      name
+      childImageSharp {
+        gatsbyImageData(formats: [AUTO, WEBP, AVIF])
+        fluid {
+          sizes
+          src
+          srcSet
+        }
+      }
+    }
+    allFile(
+      filter: { relativeDirectory: { eq: "games" } }
+      sort: { fields: name }
+    ) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData
+        }
+        name
+      }
+      totalCount
+    }
+    strapiGame(appid: { eq: $appid }) {
       description
       icon_url
       appid
@@ -56,8 +80,8 @@ export const query = graphql`
     }
     allStrapiGame(
       filter: {
-        gid: { ne: $gid }
         appid: {
+          ne: $appid
           in: [
             "Knife"
             "JumpSmash"
