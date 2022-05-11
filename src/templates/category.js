@@ -35,14 +35,14 @@ export default function CategoryTemplate({
           <List items={allGames} type="card" />
         )}
       </div>
-      {allGames.length > 6 ? (
+      {/* {allGames.length > 6 ? (
         <Banner
           className={`banner mb-6`}
           style={{ display: "block" }}
           slot={ADS_SLOT_ID.category}
           responsive="false"
         />
-      ) : null}
+      ) : null} */}
     </Layout>
   )
 }

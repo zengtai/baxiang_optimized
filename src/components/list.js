@@ -1,11 +1,8 @@
 import * as React from "react"
+
 import ListItem from "./listItem"
 
-export default function List({ items, type, lazy, focus, gameImgs }) {
-  // console.log(items)
-  // console.log(focus)
-  // console.log(gameImgs)
-
+export default function List({ items, type, lazy, focus }) {
   if (type === "grid") {
     return (
       <>
@@ -14,6 +11,7 @@ export default function List({ items, type, lazy, focus, gameImgs }) {
             let game = item.node || item
             return (
               <ListItem
+                key={game.slug}
                 item={game}
                 type={type}
                 lazy={lazy}
@@ -34,6 +32,7 @@ export default function List({ items, type, lazy, focus, gameImgs }) {
             let game = item.node || item
             return (
               <ListItem
+                key={game.slug}
                 item={game}
                 type={type}
                 lazy={lazy}
@@ -45,5 +44,5 @@ export default function List({ items, type, lazy, focus, gameImgs }) {
         </ul>
       </>
     )
-  } else return <>OK</>
+  } else return <>Loading...</>
 }

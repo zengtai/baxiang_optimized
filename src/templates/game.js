@@ -11,34 +11,34 @@ import { graphql } from "gatsby"
 export default function GameTemplate({ data }) {
   const game = data.strapiGame
   const relatedGames = data.allStrapiGame.nodes
-  const relatedGamesImgs = data.allFile.nodes
-  const gameImg = data.file.childImageSharp.gatsbyImageData
+  // const relatedGamesImgs = data.allFile.nodes
+  // const gameImg = data.file.childImageSharp.gatsbyImageData
   // console.log(ADS_SLOT_ID.game)
   return (
     <Layout>
       <Seo title={game.title} />
 
-      {/* <Banner
+      <Banner
         className={`banner`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.game}
         responsive="false"
-      /> */}
+      />
 
       <div className="container mx-auto">
-        <Detail game={game} gameImg={gameImg} />
+        <Detail game={game} />
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
           You May Also Like
         </h2>
         <List items={relatedGames} type="grid" />
       </div>
 
-      {/* <Banner
+      <Banner
         className={`banner mb-6`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.game}
         responsive="false"
-      /> */}
+      />
     </Layout>
   )
 }
@@ -169,9 +169,9 @@ export const query = graphql`
     ) {
       nodes {
         title
-        gid
         icon_url
         slug
+        appid
       }
     }
   }

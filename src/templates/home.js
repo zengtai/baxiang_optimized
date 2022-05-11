@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from "react"
+import React from "react"
+import { lazy, Suspense } from "react"
 // import { Link, useStaticQuery, graphql } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 
@@ -6,7 +7,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import List from "../components/list"
 
-import { FEATURED_GAMES, ADS_SLOT_ID } from "../lib/constants"
+import { FEATURED_GAMES } from "../lib/constants"
+import { ADS_SLOT_ID } from "../lib/constants"
 
 const Banner = lazy(() => import("../components/banner"))
 const renderLoader = () => (

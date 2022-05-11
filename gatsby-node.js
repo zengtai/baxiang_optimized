@@ -297,6 +297,7 @@ exports.createPages = async ({ graphql, actions }) => {
           title
           slug
           gid
+          appid
           category {
             slug
             name
@@ -399,6 +400,7 @@ exports.createPages = async ({ graphql, actions }) => {
           icon_url
           title
           slug
+          appid
           category {
             slug
             name
@@ -453,42 +455,3 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-
-// exports.createRemoteFileNode = ({ actions }) => {
-//   const { createType } = actions
-
-//   createType(`
-//     type STRAPI_GAME implements Node {
-//       frontmatter: FrontMatter
-//       iconImg: File @link(from: "fields.localFile")
-//     }
-
-//     type FrontMatter {
-//       icon_url: String
-//     }
-//   `)
-// }
-
-// exports.onCreateNode = async ({
-//   node,
-//   actions: { createNode, createNodeField },
-//   createNodeId,
-//   cache,
-// }) => {
-//   if (node.internal.type === "STRAPI_GAME" && node.icon_url !== null) {
-//     try {
-//       const fileNode = await createRemoteFileNode({
-//         url: node.icon_url,
-//         parentNodeId: node.id,
-//         cache,
-//         createNode,
-//         createNodeId,
-//       })
-//       if (fileNode) {
-//         createNodeField({ node, name: "localFile", value: fileNode.id })
-//       }
-//     } catch (error) {
-//       console.error(error)
-//     }
-//   }
-// }

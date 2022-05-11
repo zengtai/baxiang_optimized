@@ -1,40 +1,16 @@
 import * as React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
+import Image from "./image"
 
 export default function ListItem({ item, type, lazy, focus }) {
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: { relativeDirectory: { eq: "games" } }
-        sort: { fields: name }
-      ) {
-        nodes {
-          childImageSharp {
-            gatsbyImageData
-          }
-          name
-        }
-        totalCount
-      }
-    }
-  `)
-  // console.log(item)
-  // console.log(data.allFile.nodes)
-  // console.log(
-  //   data.allFile.nodes.filter(
-  //     node => node.name == item.title.replace(/\s/g, "")
-  //   )[0].childImageSharp.gatsbyImageData
-  // )
   let delay = `${(Math.random() * 10).toFixed(1)}s`
-  const gameImg = data.allFile.nodes.filter(
-    node => node.name === item.title.replace(/\s/g, "")
-  )[0].childImageSharp.gatsbyImageData
-
+  console.log(item)
   if (type === "grid") {
     // console.log(gameImg)
     return (
-      <li className={`flex flex-col items-center`} key={item.slug}>
+      <li className={`flex flex-col items-center`}>
         <Link
           to={`/game/${item.slug}`}
           style={{ animationDelay: `${delay}` }}
@@ -42,11 +18,19 @@ export default function ListItem({ item, type, lazy, focus }) {
             focus ? `focus` : ""
           } group relative transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110`}
         >
-          <GatsbyImage
+          {/* <GatsbyImage
             image={gameImg}
             alt={item.title}
             width={100}
             height={100}
+          /> */}
+
+          <Image
+            src={item.appid}
+            alt={item.title}
+            width={100}
+            height={100}
+            lazy={lazy}
           />
 
           <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
@@ -58,7 +42,7 @@ export default function ListItem({ item, type, lazy, focus }) {
   }
   if (type === "card") {
     return (
-      <li key={item.slug}>
+      <li>
         <Link
           to={`/game/${item.slug}`}
           style={{ animationDelay: `${delay}` }}
@@ -66,10 +50,17 @@ export default function ListItem({ item, type, lazy, focus }) {
             focus ? `focus` : ``
           } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-cyan-700 to-blue-600 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}
         >
-          <GatsbyImage
+          {/* <GatsbyImage
             className="absolute left-0"
             image={gameImg}
             alt={item.title}
+          /> */}
+          <Image
+            className="absolute left-0"
+            src={item.appid}
+            alt={item.title}
+            width={100}
+            height={100}
           />
           <h2 className="py-2">{item.title}</h2>
           <span className="inline-block origin-left scale-90 rounded-md bg-black/10 px-1.5 py-1 text-xs">

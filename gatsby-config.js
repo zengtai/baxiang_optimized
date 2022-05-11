@@ -50,11 +50,13 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          quality: 75,
           formats: ["auto", "webp", "avif"],
           backgroundColor: `transparent`,
           placeholder: `dominantColor`,
         },
+        background: `rgba(0,0,0,5)`,
+        defaultQuality: 78,
+        failOnError: false,
       },
     },
     {
@@ -71,13 +73,13 @@ module.exports = {
         icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-remote-images`,
-    //   options: {
-    //     nodeType: "STRAPI_GAME",
-    //     imagePath: "icon_url",
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "STRAPI_GAME",
+        imagePath: "icon_url",
+      },
+    },
     "gatsby-plugin-postcss",
     {
       resolve: `gatsby-plugin-nprogress`,
