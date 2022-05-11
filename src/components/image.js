@@ -12,6 +12,7 @@ export default function Image({ className, src, alt, width, height, lazy }) {
           src={`/games/${src}.png`}
           alt={alt}
           loading={lazy ? `lazy` : `eager`}
+          decoding="async"
         />
       </picture>
     </>
