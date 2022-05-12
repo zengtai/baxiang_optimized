@@ -2,12 +2,20 @@ import * as React from "react"
 import { Link } from "gatsby"
 // import { useStaticQuery, graphql } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
+import { Shimmer } from "./icons"
 import Image from "./image"
 import getIcon from "./icons"
 
-export default function ListItem({ index, item, type, lazy, focus, top }) {
+export default function ListItem({
+  index,
+  item,
+  type,
+  lazy,
+  focus,
+  top,
+  shime,
+}) {
   let delay = `${(Math.random() * 10).toFixed(1)}s`
-  // console.log(item)
 
   if (type === "grid") {
     // console.log(gameImg)
@@ -19,10 +27,19 @@ export default function ListItem({ index, item, type, lazy, focus, top }) {
           <Link
             to={`/game/${item.slug}`}
             style={{ animationDelay: `${delay}` }}
-            className={`${focus ? `focus` : ""} ${
+            className={`${focus === true ? `focus` : ""} ${
               top ? `rounded-3xl` : `rounded-xl`
             } group relative transform overflow-hidden border-4 shadow-lg duration-300 ease-in-out md:hover:scale-110`}
           >
+            {shime ? (
+              <div
+                // style={{ animationDelay: `${(Math.random() * 3).toFixed(1)}s` }}
+                className="shimmerDiv absolute left-0 top-0 h-full w-full"
+              >
+                {Shimmer()}
+              </div>
+            ) : null}
+
             <Image
               src={item.appid}
               alt={item.title}
@@ -43,7 +60,7 @@ export default function ListItem({ index, item, type, lazy, focus, top }) {
           <Link
             to={`/game/${item.slug}`}
             style={{ animationDelay: `${delay}` }}
-            className={`${focus ? `focus` : ""} ${
+            className={`${focus === true ? `focus` : ""} ${
               top ? `rounded-full` : `rounded-xl`
             } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out md:hover:scale-110`}
           >
@@ -72,19 +89,16 @@ export default function ListItem({ index, item, type, lazy, focus, top }) {
   }
   if (type === "card") {
     return (
-      <li>
+      <li className="">
         <Link
           to={`/game/${item.slug}`}
           style={{ animationDelay: `${delay}` }}
           className={`${
-            focus ? `focus` : ``
+            focus === true
+              ? `focus subpixel-antialiased will-change-transform`
+              : ``
           } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-cyan-700 to-blue-600 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}
         >
-          {/* <GatsbyImage
-            className="absolute left-0"
-            image={gameImg}
-            alt={item.title}
-          /> */}
           <Image
             className="absolute left-0"
             src={item.appid}

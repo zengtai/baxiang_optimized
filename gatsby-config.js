@@ -12,6 +12,7 @@ module.exports = {
     siteUrl: `https://www.supereasygame.com/`,
   },
   pathPrefix: `/webs/baxiang/baxiang_main_new_4`,
+  // assetPrefix: `/webs/baxiang/baxiang_main_new_4`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

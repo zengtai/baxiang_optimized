@@ -4,7 +4,7 @@ import { GAME_PATH } from "../lib/constants"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import Image from "./image"
 
-export default function Detail({ game, gameImg }) {
+export default function Detail({ game }) {
   return (
     <>
       <div className="flex origin-left scale-95 flex-row space-x-2 px-6 pb-3">
@@ -15,14 +15,8 @@ export default function Detail({ game, gameImg }) {
         <span className="opacity-50">{game.title}</span>
       </div>
       <div className="mx-3 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-sky-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
-        <div className="block h-32 w-32 shrink-0 overflow-hidden rounded-xl">
-          <Image
-            className="h-32 w-32 rounded-xl object-fill"
-            src={game.appid}
-            alt={game.title}
-            width={128}
-            height={128}
-          />
+        <div className="block h-[100px] w-[100px] shrink-0 overflow-hidden rounded-xl">
+          <Image src={game.appid} alt={game.title} width={100} height={100} />
           {/* <GatsbyImage image={gameImg} alt={game.title} width={96} /> */}
         </div>
         <div className="px-4">

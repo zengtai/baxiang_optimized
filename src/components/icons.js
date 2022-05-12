@@ -15,6 +15,44 @@ const iconList = {
   top2: iconSecond(),
   top3: iconThird(),
 }
+
+export function Shimmer() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      className="shimmer"
+    >
+      <defs>
+        <linearGradient id="light" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop
+            offset="0%"
+            style={{ stopColor: `rgb(255, 255, 255)`, stopOpacity: 0 }}
+          ></stop>
+          <stop
+            offset="25%"
+            style={{ stopColor: `rgb(255, 255, 255)`, stopOpacity: 0 }}
+          ></stop>
+          <stop
+            offset="50%"
+            style={{ stopColor: `rgb(255, 255, 255)`, stopOpacity: 1 }}
+          ></stop>
+          <stop
+            offset="75%"
+            style={{ stopColor: `rgb(255, 255, 255)`, stopOpacity: 0 }}
+          ></stop>
+          <stop
+            offset="100%"
+            style={{ stopColor: `rgb(238, 130, 238)`, stopOpacity: 0 }}
+          ></stop>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#light)"></rect>
+    </svg>
+  )
+}
+
 // ****Top****
 export function iconFirst() {
   return (

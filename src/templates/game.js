@@ -30,7 +30,7 @@ export default function GameTemplate({ data }) {
         <h2 className="flex flex-row px-3 text-lg font-semibold text-sky-100/80">
           You May Also Like
         </h2>
-        <List items={relatedGames} type="grid" />
+        <List items={relatedGames} type="grid" focus />
       </div>
 
       <Banner

@@ -40,9 +40,9 @@ const Home = ({ pageContext: data }) => {
         <h2 className="sr-only px-4 text-center text-lg font-bold">
           All Games ({allGames.length})
         </h2>
-        <List items={topGames} type="grid" top focus />
+        <List items={topGames} type="grid" top />
         <List items={hotGames.slice(0, 6)} type="card" focus />
-        <List items={hotGames.slice(6)} type="grid" focus lazy={true} />
+        <List items={hotGames.slice(6)} type="grid" lazy={true} focus />
         <List items={normalGames.slice(0, 6)} type="card" lazy={true} />
         <List items={normalGames.slice(6, 42)} type="grid" lazy={true} />
 

@@ -3,6 +3,11 @@ import * as React from "react"
 import ListItem from "./listItem"
 
 export default function List({ items, type, lazy, focus, top }) {
+  let luckyNum = items.length >= 3 ? parseInt(Math.random() * 3) : 0
+
+  let shimNum = parseInt(Math.random() * 3)
+  console.log(shimNum)
+
   if (type === "grid") {
     if (top) {
       return (
@@ -11,6 +16,7 @@ export default function List({ items, type, lazy, focus, top }) {
           <ul className="mx-3 mb-5 grid grid-cols-3 gap-3 md:flex md:justify-center md:space-x-4">
             {items.map((item, index) => {
               let game = item.node || item
+              console.log(index)
               return (
                 <ListItem
                   index={index}
@@ -18,8 +24,8 @@ export default function List({ items, type, lazy, focus, top }) {
                   item={game}
                   type={type}
                   lazy={lazy}
-                  focus={focus}
-                  order={focus && index < 3 ? index : ``}
+                  focus={focus && index === luckyNum ? true : false}
+                  shime={index === shimNum ? true : false}
                   top={top}
                 />
               )
@@ -40,8 +46,7 @@ export default function List({ items, type, lazy, focus, top }) {
                   item={game}
                   type={type}
                   lazy={lazy}
-                  focus={focus}
-                  order={focus && index < 3 ? index : ``}
+                  focus={focus && index === luckyNum ? true : false}
                   top={top}
                 />
               )
@@ -63,8 +68,7 @@ export default function List({ items, type, lazy, focus, top }) {
                 item={game}
                 type={type}
                 lazy={lazy}
-                focus={focus}
-                order={focus && index < 3 ? index : ``}
+                focus={focus && index === luckyNum ? true : false}
               />
             )
           })}
