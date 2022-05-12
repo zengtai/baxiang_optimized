@@ -106,11 +106,11 @@ export default function ListItem({
             width={100}
             height={100}
           />
-          <h2 className="py-2">{item.title}</h2>
+          <h2 className="py-2 lg:origin-left lg:scale-90">{item.title}</h2>
           <span className="inline-block origin-left scale-90 rounded-md bg-black/10 px-1.5 py-1 text-xs">
             <span className="uppercase opacity-60">{item.category.name}</span>
           </span>
-          <div className="absolute right-3 top-1/2 -translate-y-1/2">
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
