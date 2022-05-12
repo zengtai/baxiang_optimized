@@ -84,9 +84,12 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `tomato`,
+        color: `rgb(132, 204, 22)`,
         // Disable the loading spinner.
         showSpinner: true,
+        barHeight: `3px`,
+        spinnerSize: `18px`,
+        spinnerBorder: `3px`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

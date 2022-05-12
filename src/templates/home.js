@@ -33,11 +33,11 @@ const Home = ({ pageContext: data }) => {
       />
 
       <div className="container mx-auto">
-        <h2 className="px-4 text-center text-lg font-bold">
+        <h2 className="sr-only px-4 text-center text-lg font-bold">
           All Games ({allGames.length})
         </h2>
-        <List items={topGames} type="grid" focus />
-        <List items={normalGames.slice(0, 6)} type="card" />
+        <List items={topGames} type="grid" top focus />
+        <List items={normalGames.slice(0, 6)} type="card" focus />
         <List items={normalGames.slice(6, 42)} type="grid" lazy={true} />
 
         <Banner

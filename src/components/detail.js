@@ -20,8 +20,8 @@ export default function Detail({ game, gameImg }) {
             className="h-32 w-32 rounded-xl object-fill"
             src={game.appid}
             alt={game.title}
-            width={100}
-            height={100}
+            width={128}
+            height={128}
           />
           {/* <GatsbyImage image={gameImg} alt={game.title} width={96} /> */}
         </div>

@@ -3,42 +3,72 @@ import { Link } from "gatsby"
 // import { useStaticQuery, graphql } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 import Image from "./image"
+import getIcon from "./icons"
 
-export default function ListItem({ item, type, lazy, focus }) {
+export default function ListItem({ index, item, type, lazy, focus, top }) {
   let delay = `${(Math.random() * 10).toFixed(1)}s`
   // console.log(item)
+
   if (type === "grid") {
     // console.log(gameImg)
-    return (
-      <li className={`flex flex-col items-center`}>
-        <Link
-          to={`/game/${item.slug}`}
-          style={{ animationDelay: `${delay}` }}
-          className={`${
-            focus ? `focus` : ""
-          } group relative transform overflow-hidden rounded-xl shadow-lg duration-300 ease-in-out md:hover:scale-110`}
-        >
-          {/* <GatsbyImage
+    if (top) {
+      const tops = [`top1`, `top2`, `top3`]
+      return (
+        <li className={`flex flex-col items-center md:col-span-4`}>
+          <span className="relative mb-1.5">{getIcon(tops[index])}</span>
+          <Link
+            to={`/game/${item.slug}`}
+            style={{ animationDelay: `${delay}` }}
+            className={`${focus ? `focus` : ""} ${
+              top ? `rounded-3xl` : `rounded-xl`
+            } group relative transform overflow-hidden border-4 shadow-lg duration-300 ease-in-out md:hover:scale-110`}
+          >
+            <Image
+              src={item.appid}
+              alt={item.title}
+              width={120}
+              height={120}
+              lazy={lazy}
+            />
+
+            <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
+              <span className="scale-95 text-xs">{item.title}</span>
+            </h2>
+          </Link>
+        </li>
+      )
+    } else {
+      return (
+        <li className={`flex flex-col items-center`}>
+          <Link
+            to={`/game/${item.slug}`}
+            style={{ animationDelay: `${delay}` }}
+            className={`${focus ? `focus` : ""} ${
+              top ? `rounded-full` : `rounded-xl`
+            } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out md:hover:scale-110`}
+          >
+            {/* <GatsbyImage
             image={gameImg}
             alt={item.title}
             width={100}
             height={100}
           /> */}
 
-          <Image
-            src={item.appid}
-            alt={item.title}
-            width={100}
-            height={100}
-            lazy={lazy}
-          />
+            <Image
+              src={item.appid}
+              alt={item.title}
+              width={100}
+              height={100}
+              lazy={lazy}
+            />
 
-          <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
-            <span className="scale-95 text-xs">{item.title}</span>
-          </h2>
-        </Link>
-      </li>
-    )
+            <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
+              <span className="scale-95 text-xs">{item.title}</span>
+            </h2>
+          </Link>
+        </li>
+      )
+    }
   }
   if (type === "card") {
     return (
