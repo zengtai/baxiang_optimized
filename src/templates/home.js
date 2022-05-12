@@ -13,6 +13,9 @@ import { ADS_SLOT_ID } from "../lib/constants"
 const Home = ({ pageContext: data }) => {
   // console.log(data)
   // console.log(data.categories)
+
+  console.log({ __dirname })
+
   const categories = data.categories
   const allGames = data.games
   const topGames = allGames.filter(game => FEATURED_GAMES.includes(game.title))

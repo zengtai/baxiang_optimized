@@ -6,7 +6,6 @@ export default function List({ items, type, lazy, focus, top }) {
   let luckyNum = items.length >= 3 ? parseInt(Math.random() * 3) : 0
 
   let shimNum = parseInt(Math.random() * 3)
-  console.log(shimNum)
 
   if (type === "grid") {
     if (top) {

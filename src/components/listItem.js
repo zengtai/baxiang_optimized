@@ -64,13 +64,6 @@ export default function ListItem({
               top ? `rounded-full` : `rounded-xl`
             } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out md:hover:scale-110`}
           >
-            {/* <GatsbyImage
-            image={gameImg}
-            alt={item.title}
-            width={100}
-            height={100}
-          /> */}
-
             <Image
               src={item.appid}
               alt={item.title}
