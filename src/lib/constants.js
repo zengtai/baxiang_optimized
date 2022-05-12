@@ -9,3 +9,24 @@ export const ADS_SLOT_ID = {
 }
 
 export const FEATURED_GAMES = ["Traffic Run", "Jump Smash", "Board The Train"]
+export const HOT_GAMES = [
+  "Crazy Moto",
+  "Fire The Gun",
+  "Crazy Knife",
+  "Monster Crash",
+  "Crazy Gun fight",
+  "Mr Bullet",
+  "Color Ball 3D",
+  "Let Me In",
+  "Iron Attack",
+  "My Baby Care",
+  "Archers King",
+  "Fierce City",
+  "Big Sword",
+  "Super Miner",
+  "Knife",
+  "Crazy Kart 3D",
+  "Fruits Fall",
+  "Gliding Charger",
+  "Magic Paint",
+]

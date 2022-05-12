@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 import List from "../components/list"
 import Banner from "../components/banner"
 
-import { FEATURED_GAMES } from "../lib/constants"
+import { FEATURED_GAMES, HOT_GAMES } from "../lib/constants"
 import { ADS_SLOT_ID } from "../lib/constants"
 
 const Home = ({ pageContext: data }) => {
@@ -16,8 +16,12 @@ const Home = ({ pageContext: data }) => {
   const categories = data.categories
   const allGames = data.games
   const topGames = allGames.filter(game => FEATURED_GAMES.includes(game.title))
+  const hotGames = allGames
+    .filter(game => HOT_GAMES.includes(game.title))
+    .reverse()
   const normalGames = allGames.filter(
-    game => !FEATURED_GAMES.includes(game.title)
+    game =>
+      !FEATURED_GAMES.includes(game.title) && !HOT_GAMES.includes(game.title)
   )
 
   // console.log(topGames)
@@ -37,7 +41,9 @@ const Home = ({ pageContext: data }) => {
           All Games ({allGames.length})
         </h2>
         <List items={topGames} type="grid" top focus />
-        <List items={normalGames.slice(0, 6)} type="card" focus />
+        <List items={hotGames.slice(0, 6)} type="card" focus />
+        <List items={hotGames.slice(6)} type="grid" focus lazy={true} />
+        <List items={normalGames.slice(0, 6)} type="card" lazy={true} />
         <List items={normalGames.slice(6, 42)} type="grid" lazy={true} />
 
         <Banner
@@ -47,9 +53,8 @@ const Home = ({ pageContext: data }) => {
           responsive="false"
         />
 
-        <List items={normalGames.slice(42, 48)} type="card" lazy={true} />
-        <List items={normalGames.slice(48, 72)} type="grid" lazy={true} />
-        <List items={normalGames.slice(72)} type="card" lazy={true} />
+        <List items={normalGames.slice(42, 54)} type="grid" lazy={true} />
+        <List items={normalGames.slice(54)} type="card" lazy={true} />
       </div>
     </Layout>
   )
