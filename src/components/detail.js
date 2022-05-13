@@ -25,7 +25,7 @@ export default function Detail({ game, gameImg }) {
           />
           {/* <GatsbyImage image={gameImg} alt={game.title} width={96} /> */}
         </div>
-        <div className="px-4">
+        <div className="md:px-4">
           <h1 className="py-2 text-center text-xl font-semibold md:text-left md:text-3xl">
             {game.title}
           </h1>

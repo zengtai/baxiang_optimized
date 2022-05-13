@@ -2,54 +2,45 @@ import * as React from "react"
 
 import ListItem from "./listItem"
 
-export default function List({ items, type, lazy, focus, top }) {
+export default function List({ items, type, lazy, focus, top, cols, addBig }) {
   if (type === "grid") {
-    if (top) {
-      return (
-        <>
-          {/* <ul className="mx-3 mb-5 grid grid-cols-3 gap-3 md:grid-cols-6 lg:my-6 xl:grid-cols-12"> */}
-          <ul className="mx-3 mb-5 grid grid-cols-3 gap-3 md:flex md:justify-center md:space-x-4">
-            {items.map((item, index) => {
-              let game = item.node || item
-              return (
-                <ListItem
-                  index={index}
-                  key={game.slug}
-                  item={game}
-                  type={type}
-                  lazy={lazy}
-                  focus={focus}
-                  order={focus && index < 3 ? index : ``}
-                  top={top}
-                />
-              )
-            })}
-          </ul>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <ul className="my-4 mx-3 grid grid-cols-3 gap-4 md:grid-cols-6 lg:my-6 xl:grid-cols-12">
-            {items.map((item, index) => {
-              let game = item.node || item
-              return (
-                <ListItem
-                  index={index}
-                  key={game.slug}
-                  item={game}
-                  type={type}
-                  lazy={lazy}
-                  focus={focus}
-                  order={focus && index < 3 ? index : ``}
-                  top={top}
-                />
-              )
-            })}
-          </ul>
-        </>
-      )
+    let setCols = `grid-cols-3`
+    if (cols && cols === `2`) {
+      setCols = `grid-cols-2`
     }
+    if (cols && cols === `3`) {
+      setCols = `grid-cols-3`
+    }
+    if (cols && cols === `4`) {
+      setCols = `grid-cols-4`
+    }
+    if (cols && cols === `5`) {
+      setCols = `grid-cols-5`
+    }
+    return (
+      <>
+        <ul
+          className={`my-4 mx-3 grid ${setCols} gap-4 md:grid-cols-6 lg:my-6 xl:grid-cols-12`}
+        >
+          {items.map((item, index) => {
+            let game = item.node || item
+            return (
+              <ListItem
+                index={index}
+                key={game.slug}
+                item={game}
+                type={type}
+                lazy={lazy}
+                focus={focus}
+                order={focus && index < 3 ? index : ``}
+                top={top}
+                addBig={addBig && (index - 2) % 11 === 0 ? true : false}
+              />
+            )
+          })}
+        </ul>
+      </>
+    )
   }
   if (type === "card") {
     return (

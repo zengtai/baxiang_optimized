@@ -5,7 +5,15 @@ import { Link } from "gatsby"
 import Image from "./image"
 import getIcon from "./icons"
 
-export default function ListItem({ index, item, type, lazy, focus, top }) {
+export default function ListItem({
+  index,
+  item,
+  type,
+  lazy,
+  focus,
+  top,
+  addBig,
+}) {
   let delay = `${(Math.random() * 10).toFixed(1)}s`
   // console.log(item)
 
@@ -39,12 +47,18 @@ export default function ListItem({ index, item, type, lazy, focus, top }) {
       )
     } else {
       return (
-        <li className={`flex flex-col items-center`}>
+        <li
+          className={`${
+            addBig ? `col-span-2 row-span-2 md:col-auto md:row-auto` : ``
+          } flex flex-col items-center`}
+        >
           <Link
             to={`/game/${item.slug}`}
             style={{ animationDelay: `${delay}` }}
             className={`${focus ? `focus` : ""} ${
               top ? `rounded-full` : `rounded-xl`
+            } ${
+              addBig ? `h-full w-full md:h-auto md:w-auto` : ``
             } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out md:hover:scale-110`}
           >
             {/* <GatsbyImage
@@ -57,8 +71,8 @@ export default function ListItem({ index, item, type, lazy, focus, top }) {
             <Image
               src={item.appid}
               alt={item.title}
-              width={100}
-              height={100}
+              width={addBig ? `100%` : 100}
+              height={addBig ? `100%` : 100}
               lazy={lazy}
             />
 

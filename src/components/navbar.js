@@ -125,7 +125,7 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
 
   return (
     <header className="px-3 pt-6 lg:pt-0">
-      <nav className="container relative mx-auto my-4 rounded-3xl bg-gradient-to-br from-cyan-600 to-blue-500 shadow-lg shadow-black/20 lg:my-6 lg:rounded-full">
+      <nav className="relative my-4 rounded-3xl bg-gradient-to-br from-cyan-600 to-blue-500 shadow-lg shadow-black/20 lg:my-6 lg:rounded-full">
         <Link
           to="/"
           title={siteTitle}
@@ -148,18 +148,13 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
           className="group absolute -right-3 -top-10 z-10 h-10 w-10 lg:hidden"
         >
           <span
-            className={`absolute top-1/2 left-1/2 block h-[2px] w-6 -translate-y-1/2 -translate-x-1/2 transform bg-lime-500 duration-300 ${
-              isOpen ? `-rotate-45` : `-translate-y-[8px] rotate-0`
+            className={`absolute top-1/2 left-1/2 block h-[2px] w-5 -translate-y-1/2 -translate-x-1/2 transform bg-lime-500 duration-300 ${
+              isOpen ? `-rotate-45` : `-translate-y-[5px] rotate-0`
             }`}
           ></span>
           <span
-            className={`absolute top-1/2 left-1/2 block h-[2px] w-6 -translate-x-1/2 transform bg-lime-500 duration-300 ${
-              isOpen ? `rotate-45` : `translate-y-[6px] rotate-0`
-            }`}
-          ></span>
-          <span
-            className={`absolute top-1/2 left-1/2 h-[2px] w-6 -translate-y-1/2 -translate-x-1/2 bg-lime-500 ${
-              isOpen ? `rotate-45 opacity-0` : `rotate-0 opacity-100`
+            className={`absolute top-1/2 left-1/2 block h-[2px] w-5 -translate-x-1/2 transform bg-lime-500 duration-300 ${
+              isOpen ? `rotate-45` : `translate-y-[3px] rotate-0`
             }`}
           ></span>
         </button>

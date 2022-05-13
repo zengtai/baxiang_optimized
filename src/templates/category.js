@@ -22,14 +22,12 @@ export default function CategoryTemplate({
       />
 
       <div className="container mx-auto grow">
-        <h2 className="px-4 text-center text-lg font-bold">
-          {category.name}{" "}
-          {allGames.length > 1 ? `Games (${allGames.length})` : `Game`}
+        <h2 className="px-4 text-center text-xl font-bold md:mt-4 md:text-3xl">
+          {category.name} {allGames.length > 1 ? `Games` : `Game`}
         </h2>
-        {allGames.length > 6 ? (
+        {allGames.length > 3 ? (
           <>
-            <List items={allGames.slice(0, 6)} type="card" />
-            <List items={allGames.slice(6)} type="grid" lazy={true} />
+            <List items={allGames} type="grid" lazy={true} cols="4" />
           </>
         ) : (
           <List items={allGames} type="card" />
