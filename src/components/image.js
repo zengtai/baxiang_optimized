@@ -1,22 +1,18 @@
 import React from "react"
+import { EXPORT_PATH } from "../lib/constants"
 
 export default function Image({ className, src, alt, width, height, lazy }) {
+  // const path = EXPORT_PATH || ``
+  const path = ``
   return (
     <>
       <picture className={className}>
-        <source
-          type="image/avif"
-          srcSet={`/avif/${src}.avif 1x, /avif/${src}.2x.avif 2x`}
-        />
-        <source
-          type="image/webp"
-          srcSet={`/webp/${src}.webp 1x, /webp/${src}.2x.webp 2x`}
-        />
+        <source type="image/avif" src={`${path}/avif/${src}.2x.avif 2x`} />
+        <source type="image/webp" src={`${path}/webp/${src}.2x.webp 2x`} />
         <img
           width={width}
           height={height}
-          src={`/mozjpeg/${src}.jpg`}
-          srcSet={`/mozjpeg/${src}.jpg 1x, /mozjpeg/${src}.2x.jpg 2x`}
+          src={`${path}/mozjpeg/${src}.2x.jpg`}
           alt={alt}
           loading={lazy ? `lazy` : `eager`}
           decoding="async"

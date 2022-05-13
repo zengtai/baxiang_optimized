@@ -11,7 +11,7 @@ module.exports = {
     author: `@SuperEasyGame`,
     siteUrl: `https://www.supereasygame.com/`,
   },
-  pathPrefix: `/webs/baxiang/baxiang_main_new_4`,
+  pathPrefix: `/webs/baxiang/baxiang_main_new_5`, // 导出路径
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
