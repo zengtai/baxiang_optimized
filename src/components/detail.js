@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { GAME_PATH } from "../lib/constants"
-// import { GatsbyImage } from "gatsby-plugin-image"
+
 import Image from "./image"
 
 export default function Detail({ game, gameImg }) {
@@ -23,7 +23,6 @@ export default function Detail({ game, gameImg }) {
             width={128}
             height={128}
           />
-          {/* <GatsbyImage image={gameImg} alt={game.title} width={96} /> */}
         </div>
         <div className="md:px-4">
           <h1 className="py-2 text-center text-xl font-semibold md:text-left md:text-3xl">

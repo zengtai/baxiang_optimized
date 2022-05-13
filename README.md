@@ -1,3 +1,11 @@
+## 导出注意
+
+需更改图片组件的相对路径，再执行
+
+```shell
+gatsby build --prefix-paths
+```
+
 ### 安装 TailwindCSS
 
 ```shell
