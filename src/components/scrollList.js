@@ -32,6 +32,7 @@ export default function ScrollList({
       hasMore={hasMore}
       loader={
         <div
+          role="button"
           onClick={getMoreGames}
           className="text-md m-3 mx-auto w-auto animate-pulse p-4 text-center"
         >
