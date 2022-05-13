@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import InfiniteScroll from "react-infinite-scroll-component"
 import List from "./list"
-import ListItem from "./listItem"
-import ScrollListItem from "./scrollListItem"
 
 export default function ScrollList({
   items,
@@ -10,6 +8,7 @@ export default function ScrollList({
   step = 6,
   type,
   addBig,
+  cols,
 }) {
   const allGames = items
 
@@ -19,8 +18,10 @@ export default function ScrollList({
   const getMoreGames = () => {
     const moreGames = allGames.slice(games.length, games.length + step)
     setGames(games => [...games, ...moreGames])
-    console.log(games)
-    if (games.length >= allGames.length) setHasMore(!hasMore)
+    // console.log(games)
+    if (games.length >= allGames.length) {
+      setHasMore(!hasMore)
+    }
   }
 
   return (
@@ -40,7 +41,7 @@ export default function ScrollList({
         </div>
       }
     >
-      <List items={games} type="grid" cols="4" addBig />
+      <List items={games} type={type} cols={cols} addBig={addBig} />
     </InfiniteScroll>
   )
 }

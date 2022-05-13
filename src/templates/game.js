@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Detail from "../components/detail"
@@ -12,9 +12,7 @@ import { graphql } from "gatsby"
 export default function GameTemplate({ data }) {
   const game = data.strapiGame
   const relatedGames = data.allStrapiGame.nodes
-  // const relatedGamesImgs = data.allFile.nodes
-  // const gameImg = data.file.childImageSharp.gatsbyImageData
-  // console.log(ADS_SLOT_ID.game)
+
   return (
     <Layout>
       <Seo title={game.title} />

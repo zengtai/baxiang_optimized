@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import List from "../components/list"
@@ -33,14 +33,14 @@ export default function CategoryTemplate({
           <List items={allGames} type="card" />
         )}
       </div>
-      {/* {allGames.length > 6 ? (
+      {allGames.length > 6 ? (
         <Banner
           className={`banner mb-6`}
           style={{ display: "block" }}
           slot={ADS_SLOT_ID.category}
           responsive="false"
         />
-      ) : null} */}
+      ) : null}
     </Layout>
   )
 }

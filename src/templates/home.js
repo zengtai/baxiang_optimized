@@ -23,6 +23,7 @@ const Home = ({ pageContext: data }) => {
     game => !FEATURED_GAMES.includes(game.title)
   )
   // console.log(topGames)
+
   return (
     <Layout navItems={categories}>
       <Seo title="Home" />
@@ -31,37 +32,36 @@ const Home = ({ pageContext: data }) => {
         <span>Popular This Week</span>
       </h2>
       <List items={topGames} type="grid" />
-      {/* <Banner
+      <Banner
         className={`banner`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.home}
         responsive="false"
-      /> */}
+      />
       <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
         <span className="text-cyan-500">{getIcon(`new`)}</span>
         <span>New Games</span>
       </h2>
       <List items={normalGames.slice(0, 20)} type="grid" cols="5" />
-      {/* <Banner
+      <Banner
         className={`banner rectangle`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.home}
         responsive="false"
-      /> */}
+      />
       <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
         <span className="text-cyan-500">{getIcon(`game`)}</span>
         <span>All Games</span>
       </h2>
-      {/* <List items={allGames.reverse()} type="grid" cols="4" addBig /> */}
       <div>
-        <ScrollList items={allGames.reverse()} />
+        <ScrollList items={allGames.reverse()} type="grid" cols="4" addBig />
       </div>
-      {/* <Banner
+      <Banner
         className={`banner rectangle`}
         style={{ display: "block" }}
         slot={ADS_SLOT_ID.home}
         responsive="false"
-      /> */}
+      />
       <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
         <span className="text-cyan-500">{getIcon(`category`)}</span>
         <span>Categories</span>
