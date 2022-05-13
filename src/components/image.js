@@ -7,8 +7,14 @@ export default function Image({ className, src, alt, width, height, lazy }) {
   return (
     <>
       <picture className={className}>
-        <source type="image/avif" src={`${path}/avif/${src}.avif`} />
-        <source type="image/webp" src={`${path}/webp/${src}.webp`} />
+        <source
+          type="image/avif"
+          srcSet={`${path}/avif/${src}.avif 1x,${path}/avif/${src}.avif 2x`}
+        />
+        <source
+          type="image/webp"
+          srcSet={`${path}/webp/${src}.webp 1x,${path}/webp/${src}.webp 2x`}
+        />
         <img
           width={width}
           height={height}

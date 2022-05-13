@@ -2,7 +2,8 @@ export const GAME_PATH = `https://uptapapi.uptap.com/h5Game/?type=Game&platform=
 export const ADS_ID = `ca-pub-9209477879340784`
 export const GA_ID = `UA-183890722-16`
 
-// export const EXPORT_PATH = `/webs/baxiang/baxiang_main_new_4`
+// export const EXPORT_PATH = `/webs/baxiang/baxiang_main_new_5`
+export const EXPORT_PATH = ``
 
 export const ADS_SLOT_ID = {
   home: "3055394511",
