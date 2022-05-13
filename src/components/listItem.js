@@ -61,13 +61,6 @@ export default function ListItem({
               addBig ? `h-full w-full md:h-auto md:w-auto` : ``
             } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out md:hover:scale-110`}
           >
-            {/* <GatsbyImage
-            image={gameImg}
-            alt={item.title}
-            width={100}
-            height={100}
-          /> */}
-
             <Image
               src={item.appid}
               alt={item.title}
@@ -76,7 +69,7 @@ export default function ListItem({
               lazy={lazy}
             />
 
-            <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center group-hover:flex">
+            <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center md:group-hover:flex">
               <span className="scale-95 text-xs">{item.title}</span>
             </h2>
           </Link>

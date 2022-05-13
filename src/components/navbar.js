@@ -145,16 +145,20 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
         </Link>
         <button
           onClick={toggle}
-          className="group absolute -right-3 -top-10 z-10 h-10 w-10 lg:hidden"
+          className="group absolute -right-3 -top-10 z-10 h-10 w-10 bg-black/5 lg:hidden"
         >
           <span
-            className={`absolute top-1/2 left-1/2 block h-[2px] w-5 -translate-y-1/2 -translate-x-1/2 transform bg-lime-500 duration-300 ${
-              isOpen ? `-rotate-45` : `-translate-y-[5px] rotate-0`
+            className={`absolute top-1/2 left-1/2 block h-[2px] w-5 origin-center -translate-y-1/2 -translate-x-1/2 transform bg-lime-500 duration-300 ${
+              isOpen
+                ? `translate-y-[-1px] -rotate-45`
+                : `-translate-y-[5px] rotate-0`
             }`}
           ></span>
           <span
-            className={`absolute top-1/2 left-1/2 block h-[2px] w-5 -translate-x-1/2 transform bg-lime-500 duration-300 ${
-              isOpen ? `rotate-45` : `translate-y-[3px] rotate-0`
+            className={`absolute top-1/2 left-1/2 block h-[2px] w-5 origin-center -translate-x-1/2 transform bg-lime-500 duration-300 ${
+              isOpen
+                ? `translate-y-[-1px] rotate-45`
+                : `translate-y-[3px] rotate-0`
             }`}
           ></span>
         </button>
