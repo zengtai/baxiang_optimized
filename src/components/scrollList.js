@@ -34,6 +34,8 @@ export default function ScrollList({
         <div
           role="button"
           onClick={getMoreGames}
+          onKeyDown={getMoreGames}
+          tabIndex={0}
           className="text-md m-3 mx-auto w-auto animate-pulse p-4 text-center"
         >
           <span className="cursor-pointer rounded-lg bg-black/10 p-4">
