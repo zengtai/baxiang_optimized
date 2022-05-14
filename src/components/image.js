@@ -3,7 +3,7 @@ import { EXPORT_PATH } from "../lib/constants"
 
 export default function Image({ className, src, alt, width, height, lazy }) {
   const path = EXPORT_PATH.length ? EXPORT_PATH : ``
-  // const path = ``s
+  // const path = ``
   return (
     <>
       <picture className={className}>
