@@ -6,7 +6,7 @@ export default function Image({ className, src, alt, width, height, lazy }) {
   // const path = ``
   return (
     <>
-      <picture className={className}>
+      <picture className={`${className} bg-black/5`}>
         <source
           type="image/avif"
           srcSet={`${path}/avif/${src}.avif 1x, ${path}/avif/2x/${src}.avif 2x`}
@@ -19,7 +19,7 @@ export default function Image({ className, src, alt, width, height, lazy }) {
           width={width}
           height={height}
           src={`${path}/mozjpeg/${src}.jpg`}
-          srcSet={`${path}/webp/${src}.jpg 1x, ${path}/webp/2x/${src}.jpg 2x`}
+          srcSet={`${path}/mozjpeg/${src}.jpg 1x, ${path}/mozjpeg/2x/${src}.jpg 2x`}
           alt={alt}
           loading={lazy ? `lazy` : `eager`}
           decoding="async"
