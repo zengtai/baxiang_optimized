@@ -9,11 +9,11 @@ export default function Image({ className, src, alt, width, height, lazy }) {
       <picture className={className}>
         <source
           type="image/avif"
-          srcSet={`${path}/avif/${src}.avif 1x,${path}/avif/${src}.avif 2x`}
+          srcSet={`${path}/avif/${src}.avif 1x, ${path}/avif/${src}.avif 2x`}
         />
         <source
           type="image/webp"
-          srcSet={`${path}/webp/${src}.webp 1x,${path}/webp/${src}.webp 2x`}
+          srcSet={`${path}/webp/${src}.webp 1x, ${path}/webp/${src}.webp 2x`}
         />
         <img
           width={width}

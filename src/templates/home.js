@@ -27,7 +27,7 @@ const Home = ({ pageContext: data }) => {
   return (
     <Layout navItems={categories}>
       <Seo title="Home" />
-      <h2 className="mt-5 flex items-center space-x-2 px-4 font-bold md:text-xl">
+      <h2 className="mt-3 flex items-center space-x-2 px-4 font-bold md:text-xl">
         <span className="text-orange-500">{getIcon(`hot`)}</span>
         <span>Popular This Week</span>
       </h2>

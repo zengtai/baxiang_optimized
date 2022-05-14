@@ -20,7 +20,7 @@ export default function List({ items, type, lazy, focus, top, cols, addBig }) {
     return (
       <>
         <ul
-          className={`my-4 mx-3 grid ${setCols} gap-4 md:grid-cols-6 lg:my-6 xl:grid-cols-12`}
+          className={`my-3 mx-3 grid ${setCols} gap-4 md:grid-cols-6 lg:my-6 xl:grid-cols-12`}
         >
           {items.map((item, index) => {
             let game = item.node || item
