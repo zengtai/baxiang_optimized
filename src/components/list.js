@@ -20,7 +20,7 @@ export default function List({ items, type, lazy, focus, top, cols, addBig }) {
     return (
       <>
         <ul
-          className={`my-3 mx-3 grid ${setCols} gap-4 md:grid-cols-6 lg:my-6 xl:grid-cols-12`}
+          className={`my-3 mx-3 grid ${setCols} gap-3 md:grid-cols-6 lg:my-6 xl:grid-cols-12`}
         >
           {items.map((item, index) => {
             let game = item.node || item
@@ -45,7 +45,7 @@ export default function List({ items, type, lazy, focus, top, cols, addBig }) {
   if (type === "card") {
     return (
       <>
-        <ul className="my-4 mx-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:my-6 xl:grid-cols-6">
+        <ul className="my-4 mx-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:my-6 xl:grid-cols-6">
           {items.map((item, index) => {
             let game = item.node || item
             return (

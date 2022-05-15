@@ -26,19 +26,18 @@ export default function GameTemplate({ data }) {
 
       <div className="container mx-auto">
         <Detail game={game} />
+        <Banner
+          className={`banner mb-6`}
+          style={{ display: "block" }}
+          slot={ADS_SLOT_ID.game}
+          responsive="false"
+        />
         <h2 className="mt-5 flex items-center space-x-2 px-4 text-lg font-bold">
           <span className="text-yellow-500">{getIcon(`related`)}</span>
           <span>You May Also Like</span>
         </h2>
         <List items={relatedGames} type="grid" cols="4" />
       </div>
-
-      <Banner
-        className={`banner mb-6`}
-        style={{ display: "block" }}
-        slot={ADS_SLOT_ID.game}
-        responsive="false"
-      />
     </Layout>
   )
 }
