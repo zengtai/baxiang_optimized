@@ -54,7 +54,13 @@ const Home = ({ pageContext: data }) => {
         <span>All Games</span>
       </h2>
       <div>
-        <ScrollList items={allGames.reverse()} type="grid" cols="4" addBig />
+        <ScrollList
+          items={allGames.reverse()}
+          type="grid"
+          cols="4"
+          init="5"
+          addBig
+        />
       </div>
       <Banner
         className={`banner rectangle`}

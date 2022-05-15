@@ -34,7 +34,7 @@ export default function List({ items, type, lazy, focus, top, cols, addBig }) {
                 focus={focus}
                 order={focus && index < 3 ? index : ``}
                 top={top}
-                addBig={addBig && (index - 2) % 11 === 0 ? true : false}
+                addBig={addBig && (index - 6) % 11 === 0 ? true : false}
               />
             )
           })}
