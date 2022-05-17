@@ -5,7 +5,7 @@ const Banner = ({
   style,
   layout,
   format,
-  client = "ca-pub-9209477879340784",
+  client = "ca-pub-3041128825330075",
   slot,
   responsive,
   layoutKey,

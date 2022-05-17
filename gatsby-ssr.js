@@ -21,7 +21,7 @@ const React = require("react")
 
 const postBodyComponents = [
   <script
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9209477879340784"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3041128825330075"
     crossOrigin="anonymous"
     async
   />,
