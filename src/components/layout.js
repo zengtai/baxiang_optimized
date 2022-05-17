@@ -26,7 +26,7 @@ export default function Layout({ navItems, children, menuOpen }) {
 
       <main className="flex grow flex-col">{children}</main>
       <footer className="mt-4 flex justify-center bg-emerald-700/80 py-7">
-        <div className="container scale-90 text-center">
+        <div className="container scale-90 text-center opacity-40">
           Copyright © {new Date().getFullYear()} &middot;{" "}
           {data.site.siteMetadata.title}
         </div>
