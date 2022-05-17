@@ -1,15 +1,21 @@
 export const GAME_PATH = `https://uptapapi.uptap.com/h5Game/?type=Game&platform=youletech&appid=`
-export const ADS_ID = `ca-pub-9209477879340784`
-export const GA_ID = `G-DDF82DXW7Z`
+export const ADS_ID = `ca-pub-3041128825330075`
+// export const ADS_ID = `ca-pub-9209477879340784`
+// export const GA_ID = `G-DDF82DXW7Z`
 
 // export const EXPORT_PATH = `/webs/baxiang/baxiang_main_new_5`
 export const EXPORT_PATH = ``
 
 export const ADS_SLOT_ID = {
-  home: "8841942463",
-  category: "2623469732",
-  game: "7528860791",
+  home: "9440239731",
+  category: "9440239731",
+  game: "9440239731",
 }
+// export const ADS_SLOT_ID = {
+//   home: "8841942463",
+//   category: "2623469732",
+//   game: "7528860791",
+// }
 
 export const FEATURED_GAMES = ["Traffic Run", "Jump Smash", "Board The Train"]
 
