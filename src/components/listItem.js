@@ -64,8 +64,8 @@ export default function ListItem({
             <Image
               src={item.appid}
               alt={item.title}
-              width={addBig ? `100%` : 100}
-              height={addBig ? `100%` : 100}
+              width={`100%`}
+              height={`100%`}
               lazy={lazy}
             />
 
@@ -85,7 +85,7 @@ export default function ListItem({
           style={{ animationDelay: `${delay}` }}
           className={`${
             focus ? `focus` : ``
-          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-cyan-700 to-blue-600 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}
+          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}
         >
           {/* <GatsbyImage
             className="absolute left-0"
@@ -99,7 +99,7 @@ export default function ListItem({
             width={100}
             height={100}
           />
-          <h2 className="py-2">{item.title}</h2>
+          <h2 className="py-2 font-bold">{item.title}</h2>
           <span className="inline-block origin-left scale-90 rounded-md bg-black/10 px-1.5 py-1 text-xs">
             <span className="uppercase opacity-60">{item.category.name}</span>
           </span>

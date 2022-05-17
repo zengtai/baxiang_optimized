@@ -4,7 +4,7 @@ import { GAME_PATH } from "../lib/constants"
 
 import Image from "./image"
 
-export default function Detail({ game, gameImg }) {
+export default function Detail({ game }) {
   return (
     <>
       <div className="flex origin-left scale-95 flex-row space-x-2 px-6 pb-3">
@@ -14,7 +14,7 @@ export default function Detail({ game, gameImg }) {
         <span>&gt;</span>
         <span className="opacity-50">{game.title}</span>
       </div>
-      <div className="mx-3 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-sky-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
+      <div className="mx-3 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-emerald-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
         <div className="block h-32 w-32 shrink-0 overflow-hidden rounded-xl">
           <Image
             className="h-32 w-32 rounded-xl object-fill"
@@ -31,7 +31,7 @@ export default function Detail({ game, gameImg }) {
           <div className="text-center md:text-left">
             <Link
               to={`/category/${game.category.slug}`}
-              className="inline-block scale-90 rounded-md bg-sky-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-sky-500/30"
+              className="inline-block scale-90 rounded-md bg-emerald-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-emerald-500/30"
             >
               <span className="uppercase">{game.category.name}</span>
             </Link>
@@ -43,7 +43,7 @@ export default function Detail({ game, gameImg }) {
       </div>
       <div className="mx-3 py-4">
         <a
-          className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+          className="mx-auto block rounded-full bg-gradient-to-r from-yellow-500 to-orange-400 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
           href={`${GAME_PATH}${game.appid}#play`}
         >
           Play Now

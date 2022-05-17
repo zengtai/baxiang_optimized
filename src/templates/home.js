@@ -39,7 +39,7 @@ const Home = ({ pageContext: data }) => {
         responsive="false"
       />
       <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
-        <span className="text-cyan-500">{getIcon(`new`)}</span>
+        <span className="text-green-500">{getIcon(`new`)}</span>
         <span>New Games</span>
       </h2>
       <List items={normalGames.slice(0, 20)} type="grid" cols="5" />
@@ -50,7 +50,7 @@ const Home = ({ pageContext: data }) => {
         responsive="false"
       />
       <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
-        <span className="text-cyan-500">{getIcon(`game`)}</span>
+        <span className="text-yellow-500">{getIcon(`game`)}</span>
         <span>All Games</span>
       </h2>
       <div>
@@ -69,7 +69,7 @@ const Home = ({ pageContext: data }) => {
         responsive="false"
       />
       <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
-        <span className="text-cyan-500">{getIcon(`category`)}</span>
+        <span className="text-lime-500">{getIcon(`category`)}</span>
         <span>Categories</span>
       </h2>
       <CategoryList categories={categories} />
