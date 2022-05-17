@@ -14,11 +14,12 @@ import getIcon from "../components/icons"
 const Home = ({ pageContext: data }) => {
   // console.log(data)
   // console.log(data.categories)
-  const categories = data.categories
-  const allGames = data.games
+  const categories = data.categories.slice()
+  const allGames = data.games.slice()
 
   // console.log(allGames)
-  const topGames = allGames.filter(game => FEATURED_GAMES.includes(game.title))
+  let topGames = allGames.filter(game => FEATURED_GAMES.includes(game.title))
+
   const normalGames = allGames.filter(
     game => !FEATURED_GAMES.includes(game.title)
   )

@@ -7,8 +7,8 @@ export const ADS_ID = `ca-pub-3041128825330075`
 export const EXPORT_PATH = ``
 
 export const ADS_SLOT_ID = {
-  home: "9440239731",
-  category: "9440239731",
+  home: "2870853841",
+  category: "8937349263",
   game: "9440239731",
 }
 // export const ADS_SLOT_ID = {
