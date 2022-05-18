@@ -17,7 +17,7 @@ export default function Layout({ navItems, children, menuOpen }) {
   // console.log(navItems)
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-gradient-to-br from-emerald-700 to-emerald-900 text-sm text-white/80">
+    <div className="relative flex min-h-screen flex-col text-sm text-white/80">
       <Navbar
         siteTitle={data.site.siteMetadata.title || `Title`}
         items={navItems}
