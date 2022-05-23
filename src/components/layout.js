@@ -1,7 +1,8 @@
-import * as React from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Navbar from "./navbar"
+import Footer from "./Footer"
 
 export default function Layout({ navItems, children, menuOpen }) {
   const data = useStaticQuery(graphql`
@@ -25,12 +26,8 @@ export default function Layout({ navItems, children, menuOpen }) {
       />
 
       <main className="flex grow flex-col">{children}</main>
-      <footer className="mt-4 flex justify-center bg-emerald-700/80 py-7">
-        <div className="container scale-90 text-center opacity-40">
-          Copyright © {new Date().getFullYear()} &middot;{" "}
-          {data.site.siteMetadata.title}
-        </div>
-      </footer>
+
+      <Footer />
     </div>
   )
 }

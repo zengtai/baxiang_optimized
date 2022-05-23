@@ -28,8 +28,8 @@ export default function ListItem({
             to={`/game/${item.slug}`}
             style={{ animationDelay: `${delay}` }}
             className={`${focus ? `focus` : ""} ${
-              top ? `rounded-3xl` : `rounded-xl`
-            } group relative transform overflow-hidden border-4 shadow-lg duration-300 ease-in-out md:hover:scale-110`}
+              top ? `rounded-3xl` : `rounded-2xl`
+            } group relative transform overflow-hidden border-4 duration-300 ease-in-out md:hover:scale-110`}
           >
             <Image
               src={item.appid}
@@ -56,10 +56,10 @@ export default function ListItem({
             to={`/game/${item.slug}`}
             style={{ animationDelay: `${delay}` }}
             className={`${focus ? `focus` : ""} ${
-              top ? `rounded-full` : `rounded-xl`
+              top ? `rounded-full` : `rounded-2xl`
             } ${
               addBig ? `h-full w-full md:h-auto md:w-auto` : ``
-            } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out md:hover:scale-110`}
+            } group relative transform overflow-hidden duration-300 ease-in-out md:hover:scale-110`}
           >
             <Image
               src={item.appid}
@@ -85,7 +85,7 @@ export default function ListItem({
           style={{ animationDelay: `${delay}` }}
           className={`${
             focus ? `focus` : ``
-          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 pl-28 shadow-lg duration-300 ease-in-out md:hover:scale-110 md:hover:from-cyan-600`}
+          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 pl-28 duration-300 ease-in-out md:hover:scale-110 md:hover:from-yellow-400`}
         >
           {/* <GatsbyImage
             className="absolute left-0"
@@ -123,6 +123,6 @@ export default function ListItem({
       </li>
     )
   } else {
-    return <>OK</>
+    return null
   }
 }

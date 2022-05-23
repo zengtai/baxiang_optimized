@@ -1,7 +1,6 @@
-import * as React from "react"
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import getIcon from "../components/icons"
-// import iconList from "../components/icons"
 
 export default function Navbar({ siteTitle, items, menuOpen }) {
   const [isOpen, setOpen] = React.useState(menuOpen)
@@ -246,7 +245,7 @@ export default function Navbar({ siteTitle, items, menuOpen }) {
                   getProps={isActive}
                   to={`/category/${item.slug}`}
                   title={`${item.name} Games`}
-                  className={`animated block transform rounded-lg border-2 border-white/10 bg-white/10 p-2 text-sm font-bold duration-300 ease-in-out lg:border-transparent lg:bg-transparent lg:hover:scale-125 lg:hover:bg-white/20`}
+                  className={`animated block transform rounded-lg border-2 border-white/10 bg-white/10 p-2 text-sm font-bold text-white duration-300 ease-in-out lg:border-transparent lg:bg-transparent lg:hover:scale-125 lg:hover:bg-white/20`}
                 >
                   <div className="flex scale-95 items-center space-x-1">
                     <span>{getIcon(item.slug)}</span>
