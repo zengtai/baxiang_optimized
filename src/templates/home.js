@@ -14,10 +14,10 @@ import getIcon from "../components/icons"
 const Home = ({ pageContext: data }) => {
   // console.log(data)
   // console.log(data.categories)
+
   const categories = data.categories.slice()
   const allGames = data.games.slice()
 
-  // console.log(allGames)
   let topGames = allGames.filter(game => FEATURED_GAMES.includes(game.title))
 
   const normalGames = allGames.filter(
@@ -53,7 +53,9 @@ const Home = ({ pageContext: data }) => {
         />
         <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
           <span className="text-yellow-500">{getIcon(`game`)}</span>
-          <span>All Games</span>
+          <span>
+            All Games <b className="text-sm">({allGames.length})</b>
+          </span>
         </h2>
         <div>
           <ScrollList

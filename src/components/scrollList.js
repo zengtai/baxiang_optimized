@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import InfiniteScroll from "react-infinite-scroll-component"
 import List from "./list"
 
@@ -10,11 +10,12 @@ export default function ScrollList({
   addBig,
   cols,
 }) {
-  const allGames = items.slice()
+  let allGames = items.slice()
 
   // const initGames = data.slice(0, init)
   const [games, setGames] = useState(allGames.slice(0, init)) // 设置初始/当前游戏
   const [hasMore, setHasMore] = useState(allGames.length > init) // 是否有更多
+
   const getMoreGames = () => {
     const moreGames = allGames.slice(games.length, games.length + step)
     setGames(games => [...games, ...moreGames])

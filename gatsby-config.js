@@ -87,13 +87,6 @@ module.exports = {
         icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-remote-images`,
-    //   options: {
-    //     nodeType: "STRAPI_GAME",
-    //     imagePath: "icon_url",
-    //   },
-    // },
     "gatsby-plugin-postcss",
     {
       resolve: `gatsby-plugin-nprogress`,

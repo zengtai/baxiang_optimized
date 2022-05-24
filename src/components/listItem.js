@@ -29,7 +29,7 @@ export default function ListItem({
             style={{ animationDelay: `${delay}` }}
             className={`${focus ? `focus` : ""} ${
               top ? `rounded-3xl` : `rounded-2xl`
-            } group relative transform overflow-hidden border-4 duration-300 ease-in-out md:hover:scale-110`}
+            } group relative transform overflow-hidden border-4 bg-black/10 duration-300 ease-in-out md:hover:scale-110`}
           >
             <Image
               src={item.appid}
@@ -59,7 +59,7 @@ export default function ListItem({
               top ? `rounded-full` : `rounded-2xl`
             } ${
               addBig ? `h-full w-full md:h-auto md:w-auto` : ``
-            } group relative transform overflow-hidden duration-300 ease-in-out md:hover:scale-110`}
+            } group relative transform overflow-hidden shadow-lg duration-300 ease-in-out lg:hover:scale-110`}
           >
             <Image
               src={item.appid}
@@ -69,7 +69,7 @@ export default function ListItem({
               lazy={lazy}
             />
 
-            <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center md:group-hover:flex">
+            <h2 className="absolute -bottom-0 z-10 hidden h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 p-2 text-center lg:group-hover:flex">
               <span className="scale-95 text-xs">{item.title}</span>
             </h2>
           </Link>
@@ -85,13 +85,8 @@ export default function ListItem({
           style={{ animationDelay: `${delay}` }}
           className={`${
             focus ? `focus` : ``
-          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 pl-28 duration-300 ease-in-out md:hover:scale-110 md:hover:from-yellow-400`}
+          } group relative block h-[100px] transform overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 pl-28 shadow-lg duration-300 ease-in-out lg:hover:scale-110 lg:hover:from-yellow-400`}
         >
-          {/* <GatsbyImage
-            className="absolute left-0"
-            image={gameImg}
-            alt={item.title}
-          /> */}
           <Image
             className="absolute left-0"
             src={item.appid}

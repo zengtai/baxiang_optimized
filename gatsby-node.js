@@ -687,6 +687,7 @@ exports.createPages = async ({ graphql, actions }) => {
           title
           slug
           appid
+          creation_date
           category {
             slug
             name
