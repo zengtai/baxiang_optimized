@@ -6,10 +6,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `SuperEasyGame`,
+    title: `TapTapFun`,
     description: `Play Free Games Online`,
-    author: `@SuperEasyGame`,
-    siteUrl: `https://www.supereasygame.com/`,
+    author: `@TapTapFun`,
+    siteUrl: `https://www.taptapfun.com/`,
   },
   pathPrefix: `/webs/youle`, // 导出路径
   plugins: [
