@@ -4,9 +4,9 @@ export const ADS_ID = `ca-pub-3041128825330075`
 // export const GA_ID = `G-DDF82DXW7Z`
 
 export const SITE_META = {
-  name: `SuperEasyGame`,
-  url: `https://www.supereasygame.com`,
-  domain: `supereasygame.com`,
+  name: `TapTapFun`,
+  url: `https://m.taptapfun.com`,
+  domain: `taptapfun.com`,
 }
 
 // export const EXPORT_PATH = `/webs/baxiang/baxiang_main_new_5`

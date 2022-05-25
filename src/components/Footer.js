@@ -12,7 +12,7 @@ export default function Footer() {
     }
   `)
   return (
-    <footer className="mt-4">
+    <footer className="mt-4 text-xs">
       <nav className="flex justify-center gap-4 bg-black/10 p-2 text-white/50 ">
         <Link to="/privacy-policy">Privacy Policy</Link>
         <Link to="/terms-of-use">Terms of Use</Link>

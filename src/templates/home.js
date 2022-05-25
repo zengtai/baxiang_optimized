@@ -66,12 +66,12 @@ const Home = ({ pageContext: data }) => {
             addBig
           />
         </div>
-        <Banner
+        {/* <Banner
           className={`banner rectangle`}
           style={{ display: "block" }}
           slot={ADS_SLOT_ID.home}
           responsive="false"
-        />
+        /> */}
         <h2 className="flex items-center space-x-2 px-4 font-bold md:text-xl">
           <span className="text-lime-500">{getIcon(`category`)}</span>
           <span>Categories</span>
